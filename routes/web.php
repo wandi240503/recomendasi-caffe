@@ -97,8 +97,8 @@ Route::get('/import-database', function () {
                 $insertedTables[] = $table;
             }
         } catch (\Exception $e) {
-            // Jika ada tabel yang error (seperti masalah urutan Foreign Key), lewati saja untuk demo
-            continue;
+            // Berhenti dan tampilkan error aslinya agar kita tahu penyebabnya
+            return "Error saat memasukkan tabel {$table}: " . $e->getMessage();
         }
     }
     
