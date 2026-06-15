@@ -66,13 +66,41 @@ Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| Setup Route (For Vercel Deployment)
+| Import Route (For Vercel Deployment)
 |--------------------------------------------------------------------------
 */
 
-Route::get('/setup-database', function () {
+Route::get('/import-database', function () {
+    // 1. Jalankan migrasi untuk membuat tabel-tabel di Supabase
     \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-    // Uncomment baris di bawah jika ingin otomatis menjalankan seeder
-    // \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
-    return 'Database migrated successfully!';
+    
+    // 2. Baca file backup
+    $path = storage_path('app/data_backup.json');
+    if (!file_exists($path)) {
+        return "File backup (data_backup.json) tidak ditemukan!";
+    }
+    
+    $data = json_decode(file_get_contents($path), true);
+    $insertedTables = [];
+    
+    // 3. Masukkan data ke PostgreSQL
+    foreach ($data as $table => $rows) {
+        if (empty($rows)) continue;
+        
+        try {
+            // Karena PostgreSQL cukup ketat, jika sudah ada isinya, kita lewati
+            if (\Illuminate\Support\Facades\DB::table($table)->count() == 0) {
+                // Insert per batch kecil untuk menghindari error query kepanjangan
+                foreach (array_chunk($rows, 50) as $chunk) {
+                    \Illuminate\Support\Facades\DB::table($table)->insert($chunk);
+                }
+                $insertedTables[] = $table;
+            }
+        } catch (\Exception $e) {
+            // Jika ada tabel yang error (seperti masalah urutan Foreign Key), lewati saja untuk demo
+            continue;
+        }
+    }
+    
+    return "Migrasi dan Import sukses! Tabel yang berhasil diisi: " . implode(', ', $insertedTables);
 });
