@@ -63,3 +63,16 @@ Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
     Route::put('/fasilitas/{fasilitas}', [FasilitasController::class, 'update'])->name('admin.fasilitas.update');
     Route::delete('/fasilitas/{fasilitas}', [FasilitasController::class, 'destroy'])->name('admin.fasilitas.destroy');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Setup Route (For Vercel Deployment)
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/setup-database', function () {
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    // Uncomment baris di bawah jika ingin otomatis menjalankan seeder
+    // \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+    return 'Database migrated successfully!';
+});
