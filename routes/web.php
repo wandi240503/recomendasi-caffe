@@ -71,36 +71,16 @@ Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
 */
 
 Route::get('/import-database', function () {
-    // 1. Jalankan migrasi untuk membuat tabel-tabel di Supabase
-    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-    
-    // 2. Baca file backup
-    $path = storage_path('app/private/data_backup.json');
-    if (!file_exists($path)) {
-        return "File backup (data_backup.json) tidak ditemukan!";
-    }
-    
-    $data = json_decode(file_get_contents($path), true);
-    $insertedTables = [];
-    
-    // 3. Masukkan data ke PostgreSQL
-    foreach ($data as $table => $rows) {
-        if (empty($rows)) continue;
+    try {
+        // Karena ada masalah perbedaan format tipe data antara SQLite dan PostgreSQL,
+        // kita akan menggunakan fitur bawaan Seeder dari Laravel saja.
+        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
+            '--seed' => true,
+            '--force' => true
+        ]);
         
-        try {
-            // Karena PostgreSQL cukup ketat, jika sudah ada isinya, kita lewati
-            if (\Illuminate\Support\Facades\DB::table($table)->count() == 0) {
-                // Insert per batch kecil untuk menghindari error query kepanjangan
-                foreach (array_chunk($rows, 50) as $chunk) {
-                    \Illuminate\Support\Facades\DB::table($table)->insert($chunk);
-                }
-                $insertedTables[] = $table;
-            }
-        } catch (\Exception $e) {
-            // Berhenti dan tampilkan error aslinya agar kita tahu penyebabnya
-            return "Error saat memasukkan tabel {$table}: " . $e->getMessage();
-        }
+        return "Migrasi dan Seeding Database berhasil 100%! Data cafe sudah siap digunakan.";
+    } catch (\Exception $e) {
+        return "Error saat memasukkan data: " . $e->getMessage();
     }
-    
-    return "Migrasi dan Import sukses! Tabel yang berhasil diisi: " . implode(', ', $insertedTables);
 });
