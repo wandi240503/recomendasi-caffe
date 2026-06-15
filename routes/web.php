@@ -75,7 +75,7 @@ Route::get('/import-database', function () {
     \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
     
     // 2. Baca file backup
-    $path = storage_path('app/data_backup.json');
+    $path = storage_path('app/private/data_backup.json');
     if (!file_exists($path)) {
         return "File backup (data_backup.json) tidak ditemukan!";
     }

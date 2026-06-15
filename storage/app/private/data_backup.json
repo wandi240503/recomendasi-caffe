@@ -1,0 +1,2505 @@
+{
+    "users": [],
+    "password_reset_tokens": [],
+    "sessions": [
+        {
+            "id": "tGgfsDKMUJOVIbOVOnDHTj89QoqrElRhGRNkyYK8",
+            "user_id": null,
+            "ip_address": "127.0.0.1",
+            "user_agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/26.5 Safari\/605.1.15",
+            "payload": "eyJfdG9rZW4iOiJVWGF3SFhlT1NKVnBpUnZvaFNjNExMTkZITzF5QVFmSTdXZHBnbWRJIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9jYWZlP3BhZ2U9MiIsInJvdXRlIjoiY2FmZS5pbmRleCJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX19",
+            "last_activity": 1781437351
+        },
+        {
+            "id": "LAuesgnkFO0eyS3x4hQJbhNXB1FWEXo1HlgTMcZv",
+            "user_id": null,
+            "ip_address": "127.0.0.1",
+            "user_agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Code\/1.123.0 Chrome\/148.0.7778.97 Electron\/42.2.0 Safari\/537.36",
+            "payload": "eyJfdG9rZW4iOiJGd2xYWXpHdWN6ck5JMUhjeHNRZnRrNnpvdGN1alI2OENJbTZwUUNIIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwIiwicm91dGUiOiJob21lIn0sIl9mbGFzaCI6eyJvbGQiOltdLCJuZXciOltdfX0=",
+            "last_activity": 1781534018
+        },
+        {
+            "id": "bHMFu8on9kg1T7eWLGhu1ZFpZJkgPAvcKX7m8Hax",
+            "user_id": null,
+            "ip_address": "127.0.0.1",
+            "user_agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/26.5 Safari\/605.1.15",
+            "payload": "eyJfdG9rZW4iOiJkT3NXbXBoY1ZhTTFHWHNhV1B4OENrZkpNQnc2bExnbk5ScHZ2UFlaIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwIiwicm91dGUiOiJob21lIn0sIl9mbGFzaCI6eyJvbGQiOltdLCJuZXciOltdfX0=",
+            "last_activity": 1781534026
+        }
+    ],
+    "cache": [],
+    "cache_locks": [],
+    "jobs": [],
+    "job_batches": [],
+    "failed_jobs": [],
+    "admins": [
+        {
+            "id": 1,
+            "name": "Administrator",
+            "email": "admin@caferekomendasi.com",
+            "password": "$2y$12$ks90\/BKi\/p9Mte3qDjClveWUmex04VflWBomMHwGfpJVZg1ySMOUu",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        }
+    ],
+    "cafes": [
+        {
+            "id": 1,
+            "name": "Roaster and Bear",
+            "slug": "roaster-and-bear",
+            "description": "Cafe modern dengan interior estetik bernuansa beruang. Tempat yang nyaman dengan sofa empuk, menyajikan hidangan ala Western yang premium, serta sangat kondusif untuk work-from-cafe.",
+            "address": "Jl. Margo Utomo No.52, Gowongan, Kec. Jetis, Kota Yogyakarta",
+            "kemantren": "Jetis",
+            "konsep_utama": "Dominan Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Roaster+and+Bear+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "22:00",
+            "avg_price": 65000,
+            "rating": 4.6,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 2,
+            "name": "Loko Cafe Malioboro",
+            "slug": "loko-cafe-malioboro",
+            "description": "Terletak strategis di kawasan Stasiun Tugu, cafe ini menawarkan tempat transit yang nyaman dengan live music di area outdoor, menyajikan menu tradisional berharga terjangkau dengan view langsung ke jalan Malioboro.",
+            "address": "Jl. Pasar Kembang No.3a, Sosromenduran, Gedongtengen, Kota Yogyakarta",
+            "kemantren": "Gedongtengen",
+            "konsep_utama": "Semi-Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Loko+Cafe+Malioboro+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "23:00",
+            "avg_price": 25000,
+            "rating": 4.4,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 3,
+            "name": "Lecker Rumah Kopi",
+            "slug": "lecker-rumah-kopi",
+            "description": "Rumah kopi bergaya vintage heritage dengan perpaduan area indoor dan outdoor yang seimbang. Suasananya tenang dan fokus menyajikan aneka olahan kopi pilihan berkualitas tinggi.",
+            "address": "Jl. Tukangan No.19, Lempuyangan, Danurejan, Kota Yogyakarta",
+            "kemantren": "Danurejan",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Lecker+Rumah+Kopi+Yogyakarta",
+            "open_time": "09:00",
+            "close_time": "22:00",
+            "avg_price": 30000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 4,
+            "name": "Kala Jumpa",
+            "slug": "kala-jumpa",
+            "description": "Tempat nongkrong minimalis yang luas dengan area ber-AC di dalam maupun luar ruangan. Sangat cocok bagi mahasiswa untuk berkumpul, belajar kelompok, maupun bersantai.",
+            "address": "Jl. Kartini No.5, Terban, Gondokusuman, Kota Yogyakarta",
+            "kemantren": "Gondokusuman",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Kala+Jumpa+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "23:00",
+            "avg_price": 28000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 5,
+            "name": "Luxury Bench",
+            "slug": "luxury-bench",
+            "description": "Cafe premium berkonsep modern di pusat kota. Menawarkan kenyamanan indoor ber-AC penuh, ruang pertemuan khusus (meeting room), serta layanan eksklusif kelas atas.",
+            "address": "Jl. Mayor Suryotomo No.25, Ngupasan, Gondomanan, Kota Yogyakarta",
+            "kemantren": "Gondomanan",
+            "konsep_utama": "Dominan Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Luxury+Bench+Yogyakarta",
+            "open_time": "09:00",
+            "close_time": "22:00",
+            "avg_price": 70000,
+            "rating": 4.7,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 6,
+            "name": "Civet Coffee Malioboro",
+            "slug": "civet-coffee-malioboro",
+            "description": "Cafe bernuansa klasik\/heritage dekat Malioboro. Menyajikan kopi luwak tradisional asli di ruangan vintage ber-AC yang tenang dan damai, cocok untuk bersantai.",
+            "address": "Jl. Bausasran No.12, Purwokinanti, Pakualaman, Kota Yogyakarta",
+            "kemantren": "Pakualaman",
+            "konsep_utama": "Dominan Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Civet+Coffee+Malioboro+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "22:00",
+            "avg_price": 45000,
+            "rating": 4.3,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 7,
+            "name": "Bale Raos",
+            "slug": "bale-raos",
+            "description": "Menyajikan kuliner kegemaran para Sultan Yogyakarta dengan nuansa Kraton-vibes yang kental. Area makan dominan outdoor tradisional Jawa yang premium dan berbudaya tinggi.",
+            "address": "Jl. Magangan Kulon No.1, Panembahan, Kraton, Kota Yogyakarta",
+            "kemantren": "Kraton",
+            "konsep_utama": "Dominan Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Bale+Raos+Yogyakarta",
+            "open_time": "10:00",
+            "close_time": "22:00",
+            "avg_price": 85000,
+            "rating": 4.6,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 8,
+            "name": "Kala Kopi",
+            "slug": "kala-kopi",
+            "description": "Cafe mungil (compact) ber-AC di kawasan Ngampilan yang menyajikan kopi lezat dan terjangkau. Pilihan tepat untuk singgah sejenak (quick stop) atau membawa kopi pergi (takeaway).",
+            "address": "Jl. KH. Ahmad Dahlan No.89, Notoprajan, Ngampilan, Kota Yogyakarta",
+            "kemantren": "Ngampilan",
+            "konsep_utama": "Minimalis Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Kala+Kopi+Ngampilan+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "21:00",
+            "avg_price": 18000,
+            "rating": 4.2,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 9,
+            "name": "ViaVia Cafe",
+            "slug": "viavia-cafe",
+            "description": "Cafe berkonsep ramah lingkungan di Prawirotaman yang menjadi favorit wisatawan asing. Menyajikan menu artisan organik bergaya Western dan lokal dengan perpaduan area indoor-outdoor yang seimbang.",
+            "address": "Jl. Prawirotaman No.30, Brontokusuman, Mantrijeron, Kota Yogyakarta",
+            "kemantren": "Mantrijeron",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=ViaVia+Cafe+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "23:00",
+            "avg_price": 45000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 10,
+            "name": "Warung Lawas",
+            "slug": "warung-lawas",
+            "description": "Tempat nongkrong dengan gaya pedesaan\/rustic yang santai dan terbuka. Menyediakan area sosial semi-outdoor bernuansa vintage dengan harga menu yang sangat merakyat.",
+            "address": "Jl. Prawirotaman II No.613, Brontokusuman, Mergangsan, Kota Yogyakarta",
+            "kemantren": "Mergangsan",
+            "konsep_utama": "Semi-Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Warung+Lawas+Yogyakarta",
+            "open_time": "07:00",
+            "close_time": "22:00",
+            "avg_price": 22000,
+            "rating": 4.3,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 11,
+            "name": "Jiwa Jawi",
+            "slug": "jiwa-jawi",
+            "description": "Cafe tersembunyi berkonsep taman rimbun dengan nuansa tradisional Jawa di daerah bersejarah Kotagede. Tempat yang tenang untuk melarikan diri dari hiruk-pikuk kota.",
+            "address": "Jl. Tegal Gendu No.14, Prenggan, Kotagede, Kota Yogyakarta",
+            "kemantren": "Kotagede",
+            "konsep_utama": "Dominan Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Jiwa+Jawi+Yogyakarta",
+            "open_time": "11:00",
+            "close_time": "22:00",
+            "avg_price": 40000,
+            "rating": 4.7,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 12,
+            "name": "Sinergi Coworking Space",
+            "slug": "sinergi-coworking-space",
+            "description": "Coworking space dan cafe terintegrasi yang sangat luas, buka 24 jam. Menyediakan fasilitas belajar dan kerja yang nyaman bagi mahasiswa dan pekerja kreatif di daerah Umbulharjo.",
+            "address": "Jl. Veteran No.150, Pandeyan, Umbulharjo, Kota Yogyakarta",
+            "kemantren": "Umbulharjo",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Sinergi+Coworking+Space+Yogyakarta",
+            "open_time": "00:00",
+            "close_time": "23:59",
+            "avg_price": 30000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 13,
+            "name": "Selasar Malioboro Cafe",
+            "slug": "selasar-malioboro-cafe",
+            "description": "Cafe kasual semi-outdoor dengan hiburan live music yang hangat. Tempat nongkrong asyik bersama teman-teman dengan harga makanan dan minuman yang bersahabat di kantong.",
+            "address": "Jl. Hos Cokroaminoto No.42, Pakuncen, Wirobrajan, Kota Yogyakarta",
+            "kemantren": "Wirobrajan",
+            "konsep_utama": "Semi-Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Selasar+Malioboro+Cafe+Yogyakarta",
+            "open_time": "15:00",
+            "close_time": "23:00",
+            "avg_price": 20000,
+            "rating": 4.2,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 14,
+            "name": "Artemis Coffee & Space",
+            "slug": "artemis-coffee-space",
+            "description": "Cafe minimalis bergaya industrial dengan kombinasi area indoor ber-AC dan outdoor luas. Suasana produktif menjadikannya favorit pelajar untuk belajar dan berdiskusi.",
+            "address": "Jl. Kyai Mojo No.78, Bener, Tegalrejo, Kota Yogyakarta",
+            "kemantren": "Tegalrejo",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Artemis+Coffee+Space+Yogyakarta",
+            "open_time": "09:00",
+            "close_time": "23:00",
+            "avg_price": 25000,
+            "rating": 4.4,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 15,
+            "name": "LeGatito Cafe & Playground",
+            "slug": "legatito-cafe-playground",
+            "description": "Cafe keluarga modern dan estetik yang ramah hewan peliharaan (pet-friendly). Dilengkapi fasilitas bermain dan ruangan indoor ber-AC dingin yang menyenangkan untuk anak-anak.",
+            "address": "Jl. AM. Sangaji No.45, Cokrodiningratan, Jetis, Kota Yogyakarta",
+            "kemantren": "Jetis",
+            "konsep_utama": "Dominan Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=LeGatito+Cafe+Playground+Yogyakarta",
+            "open_time": "10:00",
+            "close_time": "21:00",
+            "avg_price": 40000,
+            "rating": 4.6,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 16,
+            "name": "Kedai Kopi Mataram",
+            "slug": "kedai-kopi-mataram",
+            "description": "Kedai kopi vintage di dekat Stasiun Lempuyangan dan Malioboro. Tempat transit yang strategis dan nyaman untuk menikmati kopi hitam klasik dengan harga murah meriah.",
+            "address": "Jl. Mataram No.55, Suryatmajan, Gedongtengen, Kota Yogyakarta",
+            "kemantren": "Gedongtengen",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Kedai+Kopi+Mataram+Yogyakarta",
+            "open_time": "07:00",
+            "close_time": "22:00",
+            "avg_price": 15000,
+            "rating": 4.3,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 17,
+            "name": "Dua Coffee Malioboro",
+            "slug": "dua-coffee-malioboro",
+            "description": "Cabang Jakarta yang hadir di pusat Jogja dengan konsep minimalis modern. Pilihan utama untuk work-from-cafe yang didukung WiFi cepat, colokan melimpah, dan AC sejuk.",
+            "address": "Jl. Abu Bakar Ali No.18, Kotabaru, Danurejan, Kota Yogyakarta",
+            "kemantren": "Danurejan",
+            "konsep_utama": "Dominan Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Dua+Coffee+Malioboro+Yogyakarta",
+            "open_time": "07:00",
+            "close_time": "22:00",
+            "avg_price": 45000,
+            "rating": 4.6,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 18,
+            "name": "Metropole Coffee",
+            "slug": "metropole-coffee",
+            "description": "Cafe berkonsep estetika serba putih (white-aesthetic) di gedung kolonial kuno (heritage). Menyuguhkan suasana premium berkelas tinggi dengan pilihan hidangan lezat.",
+            "address": "Jl. Sudirman No.21, Kotabaru, Gondokusuman, Kota Yogyakarta",
+            "kemantren": "Gondokusuman",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Metropole+Coffee+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "23:00",
+            "avg_price": 50000,
+            "rating": 4.6,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 19,
+            "name": "Estuary Cafe",
+            "slug": "estuary-cafe",
+            "description": "Cafe bertingkat berdesain industrial modern yang megah dan sangat lapang. Menyediakan ruang kerja yang kondusif dengan sirkulasi udara baik dan pencahayaan estetik.",
+            "address": "Jl. Monumen Jogja Kembali No.22, Terban, Gondokusuman, Kota Yogyakarta",
+            "kemantren": "Gondokusuman",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Estuary+Cafe+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "23:00",
+            "avg_price": 38000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 20,
+            "name": "Kopi Kebon",
+            "slug": "kopi-kebon",
+            "description": "Kebun kopi tersembunyi (hidden-gem) di dekat pusat kota. Memberikan nuansa tradisional pedesaan yang tenang berhias pepohonan rindang untuk bersantai dari kesibukan kota.",
+            "address": "Jl. Brigjen Katamso No.112, Keparakan, Gondomanan, Kota Yogyakarta",
+            "kemantren": "Gondomanan",
+            "konsep_utama": "Dominan Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Kopi+Kebon+Gondomanan+Yogyakarta",
+            "open_time": "10:00",
+            "close_time": "22:00",
+            "avg_price": 20000,
+            "rating": 4.4,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 21,
+            "name": "Gramika Space",
+            "slug": "gramika-space",
+            "description": "Ruang kreatif pemuda berdesain industrial minimalis. Memadukan kenyamanan indoor ber-AC dan kesegaran outdoor dengan harga ramah kantong mahasiswa.",
+            "address": "Jl. Jagalan No.34, Purwokinanti, Pakualaman, Kota Yogyakarta",
+            "kemantren": "Pakualaman",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Gramika+Space+Yogyakarta",
+            "open_time": "09:00",
+            "close_time": "23:00",
+            "avg_price": 22000,
+            "rating": 4.4,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 22,
+            "name": "Sujiwa Coffee",
+            "slug": "sujiwa-coffee",
+            "description": "Cafe berarsitektur tradisional Jawa kolonial dekat Kraton. Suasananya damai dan vintage dengan alunan musik gamelan lembut yang menenangkan pikiran.",
+            "address": "Jl. Rotowijayan No.15, Kadipaten, Kraton, Kota Yogyakarta",
+            "kemantren": "Kraton",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Sujiwa+Coffee+Yogyakarta",
+            "open_time": "09:00",
+            "close_time": "21:00",
+            "avg_price": 28000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 23,
+            "name": "Kopi Pojok Tamansari",
+            "slug": "kopi-pojok-tamansari",
+            "description": "Terletak di sudut destinasi bersejarah Tamansari, menyajikan kopi dan minuman penyegar dahaga yang murah meriah serta sangat ramah bagi wisatawan lokal maupun mancanegara.",
+            "address": "Jl. Taman No.2, Patehan, Ngampilan, Kota Yogyakarta",
+            "kemantren": "Ngampilan",
+            "konsep_utama": "Semi-Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Kopi+Pojok+Tamansari+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "18:00",
+            "avg_price": 15000,
+            "rating": 4.3,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 24,
+            "name": "Tujuan Cafe",
+            "slug": "tujuan-cafe",
+            "description": "Cafe bergaya retro eklektik dengan ornamen jadul yang estetik dan instagenic. Tempat yang sangat nyaman (cozy) bagi pelancong di area turis Prawirotaman.",
+            "address": "Jl. Tirtodipuran No.22, Mantrijeron, Kota Yogyakarta",
+            "kemantren": "Mantrijeron",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Tujuan+Cafe+Yogyakarta",
+            "open_time": "09:00",
+            "close_time": "22:00",
+            "avg_price": 35000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 25,
+            "name": "Kala di Atas (Rooftop)",
+            "slug": "kala-di-atas-rooftop",
+            "description": "Menyajikan keindahan pemandangan kota dari rooftop yang berdesain modern. Pilihan terbaik untuk nongkrong malam hari sambil menikmati pertunjukan live music akustik.",
+            "address": "Jl. Prawirotaman I No.40, Mantrijeron, Kota Yogyakarta",
+            "kemantren": "Mantrijeron",
+            "konsep_utama": "Dominan Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Kala+di+Atas+Rooftop+Yogyakarta",
+            "open_time": "16:00",
+            "close_time": "00:00",
+            "avg_price": 40000,
+            "rating": 4.6,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 26,
+            "name": "Awor Coffee",
+            "slug": "awor-coffee",
+            "description": "Coffee shop legendaris bagi para pencinta kopi Yogyakarta. Buka hingga larut malam (midnight-open), ber-AC dingin, dan berfokus menyajikan racikan espresso premium.",
+            "address": "Jl. Kolonel Sugiyono No.33, Brontokusuman, Mergangsan, Kota Yogyakarta",
+            "kemantren": "Mergangsan",
+            "konsep_utama": "Dominan Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Awor+Coffee+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "02:00",
+            "avg_price": 26000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 27,
+            "name": "Sore Sore Coffee",
+            "slug": "sore-sore-coffee",
+            "description": "Nikmati keindahan sunset dengan suasana kasual di area kebun outdoor yang luas. Menu kopi susu kekinian yang manis dan murah menjadikannya primadona sore hari.",
+            "address": "Jl. Kemasan No.52, Purbayan, Kotagede, Kota Yogyakarta",
+            "kemantren": "Kotagede",
+            "konsep_utama": "Dominan Outdoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Sore+Sore+Coffee+Yogyakarta",
+            "open_time": "15:00",
+            "close_time": "22:00",
+            "avg_price": 18000,
+            "rating": 4.4,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 28,
+            "name": "Couvee (Ahmad Dahlan)",
+            "slug": "couvee-ahmad-dahlan",
+            "description": "Terkenal dengan signature kopi susu rasa karamel dan pandan yang lezat. Desain tempat minimalis modern ber-AC yang nyaman untuk singgah sejenak memesan kopi.",
+            "address": "Jl. KH. Ahmad Dahlan No.66, Notoprajan, Wirobrajan, Kota Yogyakarta",
+            "kemantren": "Wirobrajan",
+            "konsep_utama": "Dominan Indoor",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Couvee+Ahmad+Dahlan+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "22:00",
+            "avg_price": 28000,
+            "rating": 4.6,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 29,
+            "name": "Eplus Co-working & Cafe",
+            "slug": "eplus-co-working-cafe",
+            "description": "Co-working cafe yang lengkap dengan ruang meeting ber-AC dan jaringan internet berkecepatan tinggi. Tempat favorit para mahasiswa untuk mengerjakan tugas dengan produktif.",
+            "address": "Jl. Glagahsari No.88, Warungboto, Umbulharjo, Kota Yogyakarta",
+            "kemantren": "Umbulharjo",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Eplus+Co-working+Cafe+Yogyakarta",
+            "open_time": "08:00",
+            "close_time": "23:00",
+            "avg_price": 25000,
+            "rating": 4.4,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 30,
+            "name": "Nuri Coffee & Eatery",
+            "slug": "nuri-coffee-eatery",
+            "description": "Cafe dan restoran berkonsep modern yang sangat lapang. Menyajikan aneka menu nusantara dan Western yang lezat untuk santap bersama keluarga besar sembari dihibur live music.",
+            "address": "Jl. Kyai Mojo No.102, Bener, Tegalrejo, Kota Yogyakarta",
+            "kemantren": "Tegalrejo",
+            "konsep_utama": "Balanced (In-Out)",
+            "gmaps_url": "https:\/\/www.google.com\/maps\/search\/?api=1&query=Nuri+Coffee+Eatery+Yogyakarta",
+            "open_time": "10:00",
+            "close_time": "22:00",
+            "avg_price": 35000,
+            "rating": 4.5,
+            "is_active": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        }
+    ],
+    "fasilitas": [
+        {
+            "id": 1,
+            "name": "Indoor",
+            "slug": "indoor",
+            "icon": "\ud83c\udfe0",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 2,
+            "name": "Outdoor",
+            "slug": "outdoor",
+            "icon": "\ud83c\udf3f",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 3,
+            "name": "Rooftop",
+            "slug": "rooftop",
+            "icon": "\ud83c\udf06",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 4,
+            "name": "Smoking Area",
+            "slug": "smoking-area",
+            "icon": "\ud83d\udeac",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 5,
+            "name": "WiFi",
+            "slug": "wifi",
+            "icon": "\ud83d\udcf6",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 6,
+            "name": "AC",
+            "slug": "ac",
+            "icon": "\u2744\ufe0f",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 7,
+            "name": "Spot Foto",
+            "slug": "spot-foto",
+            "icon": "\ud83d\udcf8",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 8,
+            "name": "Live Music",
+            "slug": "live-music",
+            "icon": "\ud83c\udfb5",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 9,
+            "name": "Bilyard",
+            "slug": "bilyard",
+            "icon": "\ud83c\udfb1",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 10,
+            "name": "Sofa",
+            "slug": "sofa",
+            "icon": "\ud83d\udecb\ufe0f",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 11,
+            "name": "Western",
+            "slug": "western",
+            "icon": "\ud83c\udf54",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 12,
+            "name": "Estetik",
+            "slug": "estetik",
+            "icon": "\u2728",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 13,
+            "name": "Premium",
+            "slug": "premium",
+            "icon": "\ud83d\udc8e",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 14,
+            "name": "Work-from-cafe",
+            "slug": "work-from-cafe",
+            "icon": "\ud83d\udcbb",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 15,
+            "name": "Transit",
+            "slug": "transit",
+            "icon": "\ud83d\ude89",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 16,
+            "name": "Malioboro View",
+            "slug": "malioboro-view",
+            "icon": "\u26f0\ufe0f",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 17,
+            "name": "Traditional",
+            "slug": "traditional",
+            "icon": "\ud83c\udfee",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 18,
+            "name": "Affordable",
+            "slug": "affordable",
+            "icon": "\ud83c\udff7\ufe0f",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 19,
+            "name": "Vintage",
+            "slug": "vintage",
+            "icon": "\ud83d\udd70\ufe0f",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 20,
+            "name": "Heritage",
+            "slug": "heritage",
+            "icon": "\ud83c\udfdb\ufe0f",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 21,
+            "name": "Calm",
+            "slug": "calm",
+            "icon": "\ud83e\udd2b",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 22,
+            "name": "Coffee-focused",
+            "slug": "coffee-focused",
+            "icon": "\u2615",
+            "created_at": "2026-06-14 11:42:03",
+            "updated_at": "2026-06-14 11:42:03"
+        },
+        {
+            "id": 23,
+            "name": "Minimalis",
+            "slug": "minimalis",
+            "icon": "\ud83d\udcd0",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 24,
+            "name": "Spacious",
+            "slug": "spacious",
+            "icon": "\ud83c\udf0c",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 25,
+            "name": "Student-friendly",
+            "slug": "student-friendly",
+            "icon": "\ud83c\udf93",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 26,
+            "name": "Modern",
+            "slug": "modern",
+            "icon": "\ud83c\udfe2",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 27,
+            "name": "Meeting-room",
+            "slug": "meeting-room",
+            "icon": "\ud83d\udeaa",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 28,
+            "name": "Pusat-Kota",
+            "slug": "pusat-kota",
+            "icon": "\ud83d\udccd",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 29,
+            "name": "Javanese",
+            "slug": "javanese",
+            "icon": "\ud83c\udf8b",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 30,
+            "name": "Kraton-vibes",
+            "slug": "kraton-vibes",
+            "icon": "\ud83d\udc51",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 31,
+            "name": "Culture",
+            "slug": "culture",
+            "icon": "\ud83c\udfad",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 32,
+            "name": "Compact",
+            "slug": "compact",
+            "icon": "\ud83d\udce6",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 33,
+            "name": "Quick-stop",
+            "slug": "quick-stop",
+            "icon": "\u26a1",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 34,
+            "name": "Artisan",
+            "slug": "artisan",
+            "icon": "\ud83c\udfa8",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 35,
+            "name": "Tourist-friendly",
+            "slug": "tourist-friendly",
+            "icon": "\ud83d\uddfa\ufe0f",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 36,
+            "name": "Eco-friendly",
+            "slug": "eco-friendly",
+            "icon": "\u267b\ufe0f",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 37,
+            "name": "Social-space",
+            "slug": "social-space",
+            "icon": "\ud83d\udc65",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 38,
+            "name": "Rustic",
+            "slug": "rustic",
+            "icon": "\ud83e\udeb5",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 39,
+            "name": "Garden",
+            "slug": "garden",
+            "icon": "\ud83c\udfe1",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 40,
+            "name": "Rimbun",
+            "slug": "rimbun",
+            "icon": "\ud83c\udf33",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 41,
+            "name": "Co-working",
+            "slug": "co-working",
+            "icon": "\ud83d\udcbb",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 42,
+            "name": "24-Hours",
+            "slug": "24-hours",
+            "icon": "\u23f0",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 43,
+            "name": "Casual",
+            "slug": "casual",
+            "icon": "\ud83d\udc55",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 44,
+            "name": "Industrial",
+            "slug": "industrial",
+            "icon": "\ud83c\udfed",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 45,
+            "name": "Pet-friendly",
+            "slug": "pet-friendly",
+            "icon": "\ud83d\udc3e",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 46,
+            "name": "Family-friendly",
+            "slug": "family-friendly",
+            "icon": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 47,
+            "name": "White-aesthetic",
+            "slug": "white-aesthetic",
+            "icon": "\ud83e\udd0d",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 48,
+            "name": "Hidden-gem",
+            "slug": "hidden-gem",
+            "icon": "\ud83d\udd0d",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 49,
+            "name": "Retro",
+            "slug": "retro",
+            "icon": "\ud83d\udcfb",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 50,
+            "name": "Cozy",
+            "slug": "cozy",
+            "icon": "\ud83e\uddf8",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 51,
+            "name": "City-view",
+            "slug": "city-view",
+            "icon": "\ud83c\udfd9\ufe0f",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 52,
+            "name": "Midnight-open",
+            "slug": "midnight-open",
+            "icon": "\ud83c\udf03",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 53,
+            "name": "Sunset-view",
+            "slug": "sunset-view",
+            "icon": "\ud83c\udf05",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 54,
+            "name": "Relaxed",
+            "slug": "relaxed",
+            "icon": "\ud83e\uddd8",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        }
+    ],
+    "cafe_fasilitas": [
+        {
+            "id": 1,
+            "cafe_id": 1,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 2,
+            "cafe_id": 1,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 3,
+            "cafe_id": 1,
+            "fasilitas_id": 10,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 4,
+            "cafe_id": 1,
+            "fasilitas_id": 11,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 5,
+            "cafe_id": 1,
+            "fasilitas_id": 12,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 6,
+            "cafe_id": 1,
+            "fasilitas_id": 13,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 7,
+            "cafe_id": 1,
+            "fasilitas_id": 14,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 8,
+            "cafe_id": 2,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 9,
+            "cafe_id": 2,
+            "fasilitas_id": 8,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 10,
+            "cafe_id": 2,
+            "fasilitas_id": 15,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 11,
+            "cafe_id": 2,
+            "fasilitas_id": 16,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 12,
+            "cafe_id": 2,
+            "fasilitas_id": 17,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 13,
+            "cafe_id": 2,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 14,
+            "cafe_id": 3,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 15,
+            "cafe_id": 3,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 16,
+            "cafe_id": 3,
+            "fasilitas_id": 19,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 17,
+            "cafe_id": 3,
+            "fasilitas_id": 20,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 18,
+            "cafe_id": 3,
+            "fasilitas_id": 21,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 19,
+            "cafe_id": 3,
+            "fasilitas_id": 22,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 20,
+            "cafe_id": 4,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 21,
+            "cafe_id": 4,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 22,
+            "cafe_id": 4,
+            "fasilitas_id": 23,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 23,
+            "cafe_id": 4,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 24,
+            "cafe_id": 4,
+            "fasilitas_id": 24,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 25,
+            "cafe_id": 4,
+            "fasilitas_id": 25,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 26,
+            "cafe_id": 5,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 27,
+            "cafe_id": 5,
+            "fasilitas_id": 26,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 28,
+            "cafe_id": 5,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 29,
+            "cafe_id": 5,
+            "fasilitas_id": 13,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 30,
+            "cafe_id": 5,
+            "fasilitas_id": 27,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 31,
+            "cafe_id": 5,
+            "fasilitas_id": 28,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 32,
+            "cafe_id": 6,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 33,
+            "cafe_id": 6,
+            "fasilitas_id": 19,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 34,
+            "cafe_id": 6,
+            "fasilitas_id": 21,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 35,
+            "cafe_id": 6,
+            "fasilitas_id": 17,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 36,
+            "cafe_id": 6,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 37,
+            "cafe_id": 6,
+            "fasilitas_id": 20,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 38,
+            "cafe_id": 7,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 39,
+            "cafe_id": 7,
+            "fasilitas_id": 29,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 40,
+            "cafe_id": 7,
+            "fasilitas_id": 20,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 41,
+            "cafe_id": 7,
+            "fasilitas_id": 30,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 42,
+            "cafe_id": 7,
+            "fasilitas_id": 31,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 43,
+            "cafe_id": 7,
+            "fasilitas_id": 13,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 44,
+            "cafe_id": 8,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 45,
+            "cafe_id": 8,
+            "fasilitas_id": 32,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 46,
+            "cafe_id": 8,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 47,
+            "cafe_id": 8,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 48,
+            "cafe_id": 8,
+            "fasilitas_id": 33,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 49,
+            "cafe_id": 9,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 50,
+            "cafe_id": 9,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 51,
+            "cafe_id": 9,
+            "fasilitas_id": 34,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 52,
+            "cafe_id": 9,
+            "fasilitas_id": 11,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 53,
+            "cafe_id": 9,
+            "fasilitas_id": 35,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 54,
+            "cafe_id": 9,
+            "fasilitas_id": 36,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 55,
+            "cafe_id": 10,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 56,
+            "cafe_id": 10,
+            "fasilitas_id": 19,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 57,
+            "cafe_id": 10,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 58,
+            "cafe_id": 10,
+            "fasilitas_id": 37,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 59,
+            "cafe_id": 10,
+            "fasilitas_id": 38,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 60,
+            "cafe_id": 11,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 61,
+            "cafe_id": 11,
+            "fasilitas_id": 39,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 62,
+            "cafe_id": 11,
+            "fasilitas_id": 40,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 63,
+            "cafe_id": 11,
+            "fasilitas_id": 20,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 64,
+            "cafe_id": 11,
+            "fasilitas_id": 21,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 65,
+            "cafe_id": 11,
+            "fasilitas_id": 17,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 66,
+            "cafe_id": 12,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 67,
+            "cafe_id": 12,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 68,
+            "cafe_id": 12,
+            "fasilitas_id": 41,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 69,
+            "cafe_id": 12,
+            "fasilitas_id": 25,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 70,
+            "cafe_id": 12,
+            "fasilitas_id": 42,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 71,
+            "cafe_id": 12,
+            "fasilitas_id": 24,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 72,
+            "cafe_id": 13,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 73,
+            "cafe_id": 13,
+            "fasilitas_id": 8,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 74,
+            "cafe_id": 13,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 75,
+            "cafe_id": 13,
+            "fasilitas_id": 37,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 76,
+            "cafe_id": 13,
+            "fasilitas_id": 43,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 77,
+            "cafe_id": 14,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 78,
+            "cafe_id": 14,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 79,
+            "cafe_id": 14,
+            "fasilitas_id": 23,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 80,
+            "cafe_id": 14,
+            "fasilitas_id": 44,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 81,
+            "cafe_id": 14,
+            "fasilitas_id": 25,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 82,
+            "cafe_id": 14,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 83,
+            "cafe_id": 15,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 84,
+            "cafe_id": 15,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 85,
+            "cafe_id": 15,
+            "fasilitas_id": 45,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 86,
+            "cafe_id": 15,
+            "fasilitas_id": 12,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 87,
+            "cafe_id": 15,
+            "fasilitas_id": 46,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 88,
+            "cafe_id": 15,
+            "fasilitas_id": 26,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 89,
+            "cafe_id": 16,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 90,
+            "cafe_id": 16,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 91,
+            "cafe_id": 16,
+            "fasilitas_id": 19,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 92,
+            "cafe_id": 16,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 93,
+            "cafe_id": 16,
+            "fasilitas_id": 15,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 94,
+            "cafe_id": 16,
+            "fasilitas_id": 28,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 95,
+            "cafe_id": 17,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 96,
+            "cafe_id": 17,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 97,
+            "cafe_id": 17,
+            "fasilitas_id": 23,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 98,
+            "cafe_id": 17,
+            "fasilitas_id": 26,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 99,
+            "cafe_id": 17,
+            "fasilitas_id": 13,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 100,
+            "cafe_id": 17,
+            "fasilitas_id": 14,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 101,
+            "cafe_id": 18,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 102,
+            "cafe_id": 18,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 103,
+            "cafe_id": 18,
+            "fasilitas_id": 20,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 104,
+            "cafe_id": 18,
+            "fasilitas_id": 12,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 105,
+            "cafe_id": 18,
+            "fasilitas_id": 13,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 106,
+            "cafe_id": 18,
+            "fasilitas_id": 47,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 107,
+            "cafe_id": 19,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 108,
+            "cafe_id": 19,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 109,
+            "cafe_id": 19,
+            "fasilitas_id": 44,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 110,
+            "cafe_id": 19,
+            "fasilitas_id": 24,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 111,
+            "cafe_id": 19,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 112,
+            "cafe_id": 19,
+            "fasilitas_id": 14,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 113,
+            "cafe_id": 20,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 114,
+            "cafe_id": 20,
+            "fasilitas_id": 39,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 115,
+            "cafe_id": 20,
+            "fasilitas_id": 40,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 116,
+            "cafe_id": 20,
+            "fasilitas_id": 21,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 117,
+            "cafe_id": 20,
+            "fasilitas_id": 17,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 118,
+            "cafe_id": 20,
+            "fasilitas_id": 48,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 119,
+            "cafe_id": 21,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 120,
+            "cafe_id": 21,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 121,
+            "cafe_id": 21,
+            "fasilitas_id": 23,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 122,
+            "cafe_id": 21,
+            "fasilitas_id": 44,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 123,
+            "cafe_id": 21,
+            "fasilitas_id": 25,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 124,
+            "cafe_id": 21,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 125,
+            "cafe_id": 22,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 126,
+            "cafe_id": 22,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 127,
+            "cafe_id": 22,
+            "fasilitas_id": 29,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 128,
+            "cafe_id": 22,
+            "fasilitas_id": 20,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 129,
+            "cafe_id": 22,
+            "fasilitas_id": 21,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 130,
+            "cafe_id": 22,
+            "fasilitas_id": 19,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 131,
+            "cafe_id": 23,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 132,
+            "cafe_id": 23,
+            "fasilitas_id": 20,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 133,
+            "cafe_id": 23,
+            "fasilitas_id": 35,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 134,
+            "cafe_id": 23,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 135,
+            "cafe_id": 23,
+            "fasilitas_id": 43,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 136,
+            "cafe_id": 24,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 137,
+            "cafe_id": 24,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 138,
+            "cafe_id": 24,
+            "fasilitas_id": 12,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 139,
+            "cafe_id": 24,
+            "fasilitas_id": 49,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 140,
+            "cafe_id": 24,
+            "fasilitas_id": 50,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 141,
+            "cafe_id": 24,
+            "fasilitas_id": 35,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 142,
+            "cafe_id": 25,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 143,
+            "cafe_id": 25,
+            "fasilitas_id": 3,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 144,
+            "cafe_id": 25,
+            "fasilitas_id": 51,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 145,
+            "cafe_id": 25,
+            "fasilitas_id": 8,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 146,
+            "cafe_id": 25,
+            "fasilitas_id": 37,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 147,
+            "cafe_id": 25,
+            "fasilitas_id": 26,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 148,
+            "cafe_id": 26,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 149,
+            "cafe_id": 26,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 150,
+            "cafe_id": 26,
+            "fasilitas_id": 32,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 151,
+            "cafe_id": 26,
+            "fasilitas_id": 25,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 152,
+            "cafe_id": 26,
+            "fasilitas_id": 52,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 153,
+            "cafe_id": 26,
+            "fasilitas_id": 22,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 154,
+            "cafe_id": 27,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 155,
+            "cafe_id": 27,
+            "fasilitas_id": 39,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 156,
+            "cafe_id": 27,
+            "fasilitas_id": 53,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 157,
+            "cafe_id": 27,
+            "fasilitas_id": 54,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 158,
+            "cafe_id": 27,
+            "fasilitas_id": 18,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 159,
+            "cafe_id": 27,
+            "fasilitas_id": 43,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 160,
+            "cafe_id": 28,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 161,
+            "cafe_id": 28,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 162,
+            "cafe_id": 28,
+            "fasilitas_id": 23,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 163,
+            "cafe_id": 28,
+            "fasilitas_id": 26,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 164,
+            "cafe_id": 28,
+            "fasilitas_id": 33,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 165,
+            "cafe_id": 28,
+            "fasilitas_id": 22,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 166,
+            "cafe_id": 29,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 167,
+            "cafe_id": 29,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 168,
+            "cafe_id": 29,
+            "fasilitas_id": 41,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 169,
+            "cafe_id": 29,
+            "fasilitas_id": 25,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 170,
+            "cafe_id": 29,
+            "fasilitas_id": 27,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 171,
+            "cafe_id": 29,
+            "fasilitas_id": 6,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 172,
+            "cafe_id": 30,
+            "fasilitas_id": 1,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 173,
+            "cafe_id": 30,
+            "fasilitas_id": 2,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 174,
+            "cafe_id": 30,
+            "fasilitas_id": 24,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 175,
+            "cafe_id": 30,
+            "fasilitas_id": 46,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 176,
+            "cafe_id": 30,
+            "fasilitas_id": 26,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 177,
+            "cafe_id": 30,
+            "fasilitas_id": 8,
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        }
+    ],
+    "foto_cafes": [
+        {
+            "id": 1,
+            "cafe_id": 1,
+            "url": "\/images\/cafes\/default-1.jpg",
+            "is_primary": 1,
+            "caption": "Roaster and Bear",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 2,
+            "cafe_id": 2,
+            "url": "\/images\/cafes\/default-2.jpg",
+            "is_primary": 1,
+            "caption": "Loko Cafe Malioboro",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 3,
+            "cafe_id": 3,
+            "url": "\/images\/cafes\/default-3.jpg",
+            "is_primary": 1,
+            "caption": "Lecker Rumah Kopi",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 4,
+            "cafe_id": 4,
+            "url": "\/images\/cafes\/default-4.jpg",
+            "is_primary": 1,
+            "caption": "Kala Jumpa",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 5,
+            "cafe_id": 5,
+            "url": "\/images\/cafes\/default-5.jpg",
+            "is_primary": 1,
+            "caption": "Luxury Bench",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 6,
+            "cafe_id": 6,
+            "url": "\/images\/cafes\/default-6.jpg",
+            "is_primary": 1,
+            "caption": "Civet Coffee Malioboro",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 7,
+            "cafe_id": 7,
+            "url": "\/images\/cafes\/default-7.jpg",
+            "is_primary": 1,
+            "caption": "Bale Raos",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 8,
+            "cafe_id": 8,
+            "url": "\/images\/cafes\/default-8.jpg",
+            "is_primary": 1,
+            "caption": "Kala Kopi",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 9,
+            "cafe_id": 9,
+            "url": "\/images\/cafes\/default-9.jpg",
+            "is_primary": 1,
+            "caption": "ViaVia Cafe",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 10,
+            "cafe_id": 10,
+            "url": "\/images\/cafes\/default-10.jpg",
+            "is_primary": 1,
+            "caption": "Warung Lawas",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 11,
+            "cafe_id": 11,
+            "url": "\/images\/cafes\/default-11.jpg",
+            "is_primary": 1,
+            "caption": "Jiwa Jawi",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 12,
+            "cafe_id": 12,
+            "url": "\/images\/cafes\/default-12.jpg",
+            "is_primary": 1,
+            "caption": "Sinergi Coworking Space",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 13,
+            "cafe_id": 13,
+            "url": "\/images\/cafes\/default-13.jpg",
+            "is_primary": 1,
+            "caption": "Selasar Malioboro Cafe",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 14,
+            "cafe_id": 14,
+            "url": "\/images\/cafes\/default-14.jpg",
+            "is_primary": 1,
+            "caption": "Artemis Coffee & Space",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 15,
+            "cafe_id": 15,
+            "url": "\/images\/cafes\/default-15.jpg",
+            "is_primary": 1,
+            "caption": "LeGatito Cafe & Playground",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 16,
+            "cafe_id": 16,
+            "url": "\/images\/cafes\/default-16.jpg",
+            "is_primary": 1,
+            "caption": "Kedai Kopi Mataram",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 17,
+            "cafe_id": 17,
+            "url": "\/images\/cafes\/default-17.jpg",
+            "is_primary": 1,
+            "caption": "Dua Coffee Malioboro",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 18,
+            "cafe_id": 18,
+            "url": "\/images\/cafes\/default-18.jpg",
+            "is_primary": 1,
+            "caption": "Metropole Coffee",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 19,
+            "cafe_id": 19,
+            "url": "\/images\/cafes\/default-19.jpg",
+            "is_primary": 1,
+            "caption": "Estuary Cafe",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 20,
+            "cafe_id": 20,
+            "url": "\/images\/cafes\/default-20.jpg",
+            "is_primary": 1,
+            "caption": "Kopi Kebon",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 21,
+            "cafe_id": 21,
+            "url": "\/images\/cafes\/default-21.jpg",
+            "is_primary": 1,
+            "caption": "Gramika Space",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 22,
+            "cafe_id": 22,
+            "url": "\/images\/cafes\/default-22.jpg",
+            "is_primary": 1,
+            "caption": "Sujiwa Coffee",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 23,
+            "cafe_id": 23,
+            "url": "\/images\/cafes\/default-23.jpg",
+            "is_primary": 1,
+            "caption": "Kopi Pojok Tamansari",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 24,
+            "cafe_id": 24,
+            "url": "\/images\/cafes\/default-24.jpg",
+            "is_primary": 1,
+            "caption": "Tujuan Cafe",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 25,
+            "cafe_id": 25,
+            "url": "\/images\/cafes\/default-25.jpg",
+            "is_primary": 1,
+            "caption": "Kala di Atas (Rooftop)",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 26,
+            "cafe_id": 26,
+            "url": "\/images\/cafes\/default-26.jpg",
+            "is_primary": 1,
+            "caption": "Awor Coffee",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 27,
+            "cafe_id": 27,
+            "url": "\/images\/cafes\/default-27.jpg",
+            "is_primary": 1,
+            "caption": "Sore Sore Coffee",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 28,
+            "cafe_id": 28,
+            "url": "\/images\/cafes\/default-28.jpg",
+            "is_primary": 1,
+            "caption": "Couvee (Ahmad Dahlan)",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 29,
+            "cafe_id": 29,
+            "url": "\/images\/cafes\/default-29.jpg",
+            "is_primary": 1,
+            "caption": "Eplus Co-working & Cafe",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        },
+        {
+            "id": 30,
+            "cafe_id": 30,
+            "url": "\/images\/cafes\/default-30.jpg",
+            "is_primary": 1,
+            "caption": "Nuri Coffee & Eatery",
+            "created_at": "2026-06-14 11:42:04",
+            "updated_at": "2026-06-14 11:42:04"
+        }
+    ],
+    "rekomendasis": []
+}
