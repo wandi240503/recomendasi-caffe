@@ -32,6 +32,7 @@
         "CACHE_STORE": "array",
         "SESSION_DRIVER": "cookie",
         "QUEUE_CONNECTION": "sync",
-        "DB_CONNECTION": "pgsql"
+        "DB_CONNECTION": "pgsql",
+        "LOG_CHANNEL": "stderr"
     }
 }
