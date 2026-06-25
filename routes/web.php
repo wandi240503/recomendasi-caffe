@@ -72,10 +72,11 @@ Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
 
 Route::get('/import-database', function () {
     try {
-        // Karena ada masalah perbedaan format tipe data antara SQLite dan PostgreSQL,
-        // kita akan menggunakan fitur bawaan Seeder dari Laravel saja.
-        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
-            '--seed' => true,
+        // Karena Vercel / Supabase Pooler (PgBouncer) sering bermasalah dengan perintah DROP TABLE (DDL),
+        // kita tidak perlu melakukan migrate:fresh. Cukup kosongkan data lamanya lalu Seed ulang!
+        \Illuminate\Support\Facades\DB::statement('TRUNCATE cafes, fasilitas, admins CASCADE');
+        
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
             '--force' => true
         ]);
         
