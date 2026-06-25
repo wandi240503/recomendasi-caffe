@@ -72,10 +72,27 @@ Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
 
 Route::get('/import-database', function () {
     try {
-        // Karena Vercel / Supabase Pooler (PgBouncer) sering bermasalah dengan perintah DROP TABLE (DDL),
-        // kita tidak perlu melakukan migrate:fresh. Cukup kosongkan data lamanya lalu Seed ulang!
-        \Illuminate\Support\Facades\DB::statement('TRUNCATE cafes, fasilitas, admins CASCADE');
+        // Hapus tabel secara manual satu per satu untuk menghindari error PgBouncer saat migrate:fresh
+        $tables = [
+            'cafe_fasilitas', 'foto_cafes', 'cafes', 'fasilitas', 'admins', 
+            'users', 'password_reset_tokens', 'sessions', 'cache', 'cache_locks', 
+            'jobs', 'job_batches', 'failed_jobs', 'migrations'
+        ];
         
+        foreach ($tables as $table) {
+            try {
+                \Illuminate\Support\Facades\DB::statement("DROP TABLE IF EXISTS {$table} CASCADE");
+            } catch (\Exception $e) {
+                // Abaikan error drop jika tabel bermasalah
+            }
+        }
+        
+        // Buat ulang semua tabel dengan bersih
+        \Illuminate\Support\Facades\Artisan::call('migrate', [
+            '--force' => true
+        ]);
+        
+        // Masukkan data 50 Cafe
         \Illuminate\Support\Facades\Artisan::call('db:seed', [
             '--force' => true
         ]);
