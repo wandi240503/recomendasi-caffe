@@ -2,16 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Cafe;
-use App\Models\FotoCafe;
-use App\Models\Fasilitas;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class CafeSeeder extends Seeder
 {
     public function run(): void
     {
+        $now = Carbon::now();
+
         $cafes = [
             [
                 'name' => 'Blanco Coffee & Books',
@@ -665,44 +666,89 @@ class CafeSeeder extends Seeder
             ],
         ];
 
-        foreach ($cafes as $cafeData) {
-            $staticFasilitasSlugs = $cafeData['fasilitas'];
-            unset($cafeData['fasilitas']);
-
-            $cafeData['slug'] = Str::slug($cafeData['name']);
-
-            $cafe = Cafe::updateOrCreate(
-                ['slug' => $cafeData['slug']],
-                $cafeData
-            );
-
-            $dynamicFasilitasIds = [];
-            foreach ($staticFasilitasSlugs as $slugName) {
-                $slug = Str::slug($slugName);
-                // Assign a generic icon based on the string length just for variety
-                $icons = ['✨', '🌟', '💫', '🌿', '☕', '💡', '🛋️', '🎵'];
-                $icon = $icons[strlen($slugName) % count($icons)];
-                
-                $fasilitas = Fasilitas::firstOrCreate(
-                    ['slug' => $slug],
-                    ['name' => $slugName, 'icon' => $icon]
-                );
-                $dynamicFasilitasIds[] = $fasilitas->id;
+        $allFasilitas = [];
+        $uniqueFasilitasSlugs = [];
+        $icons = ['✨', '🌟', '💫', '🌿', '☕', '💡', '🛋️', '🎵'];
+        
+        foreach ($cafes as $cafe) {
+            foreach ($cafe['fasilitas'] as $f) {
+                $slug = Str::slug($f);
+                if (!isset($uniqueFasilitasSlugs[$slug])) {
+                    $uniqueFasilitasSlugs[$slug] = true;
+                    $allFasilitas[] = [
+                        'name' => $f,
+                        'slug' => $slug,
+                        'icon' => $icons[strlen($f) % count($icons)],
+                        'created_at' => $now,
+                        'updated_at' => $now
+                    ];
+                }
             }
-
-            $cafe->fasilitas()->sync($dynamicFasilitasIds);
-
-            // Buat foto dummy
-            FotoCafe::updateOrCreate(
-                [
-                    'cafe_id' => $cafe->id,
-                    'is_primary' => true,
-                ],
-                [
-                    'url' => '/images/cafes/default-' . ($cafe->id % 15 == 0 ? 1 : $cafe->id % 15) . '.jpg',
-                    'caption' => $cafe->name,
-                ]
-            );
         }
+        
+        // 1. Bulk insert Fasilitas
+        DB::table('fasilitas')->insert($allFasilitas);
+        
+        // Retrieve them to get IDs
+        $fasilitasMap = DB::table('fasilitas')->pluck('id', 'slug')->toArray();
+        
+        // 2. Prepare Cafes and relations
+        $cafeInserts = [];
+        foreach ($cafes as $idx => $cafe) {
+            $cafeInserts[] = [
+                'name' => $cafe['name'],
+                'slug' => Str::slug($cafe['name']),
+                'kemantren' => $cafe['kemantren'],
+                'konsep_utama' => $cafe['konsep_utama'],
+                'description' => $cafe['description'],
+                'address' => $cafe['address'],
+                'gmaps_url' => $cafe['gmaps_url'],
+                'open_time' => $cafe['open_time'],
+                'close_time' => $cafe['close_time'],
+                'avg_price' => $cafe['avg_price'],
+                'rating' => $cafe['rating'],
+                'is_active' => true,
+                'created_at' => $now,
+                'updated_at' => $now
+            ];
+        }
+        
+        // Bulk insert cafes
+        DB::table('cafes')->insert($cafeInserts);
+        $cafeMap = DB::table('cafes')->pluck('id', 'slug')->toArray();
+        
+        // 3. Prepare Pivot and Photos
+        $pivotInserts = [];
+        $photoInserts = [];
+        
+        foreach ($cafes as $idx => $cafe) {
+            $slug = Str::slug($cafe['name']);
+            $cafeId = $cafeMap[$slug];
+            
+            // Photos
+            $photoInserts[] = [
+                'cafe_id' => $cafeId,
+                'url' => '/images/cafes/default-' . (($idx % 15) + 1) . '.jpg',
+                'caption' => $cafe['name'],
+                'is_primary' => true,
+                'created_at' => $now,
+                'updated_at' => $now
+            ];
+            
+            // Pivot
+            foreach ($cafe['fasilitas'] as $f) {
+                $fSlug = Str::slug($f);
+                if (isset($fasilitasMap[$fSlug])) {
+                    $pivotInserts[] = [
+                        'cafe_id' => $cafeId,
+                        'fasilitas_id' => $fasilitasMap[$fSlug]
+                    ];
+                }
+            }
+        }
+        
+        // Bulk insert pivot and photos
+        DB::table('cafe_fasilitas')->insert($pivotInserts);
+        DB::table('foto_cafes')->insert($photoInserts);
     }
 }
