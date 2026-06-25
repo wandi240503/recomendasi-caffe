@@ -74,7 +74,7 @@ Route::get('/import-database', function () {
     try {
         // Hapus tabel secara manual satu per satu untuk menghindari error PgBouncer saat migrate:fresh
         $tables = [
-            'cafe_fasilitas', 'foto_cafes', 'cafes', 'fasilitas', 'admins', 
+            'rekomendasis', 'cafe_fasilitas', 'foto_cafes', 'cafes', 'fasilitas', 'admins', 
             'users', 'password_reset_tokens', 'sessions', 'cache', 'cache_locks', 
             'jobs', 'job_batches', 'failed_jobs', 'migrations'
         ];
