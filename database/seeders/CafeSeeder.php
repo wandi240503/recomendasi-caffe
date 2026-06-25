@@ -686,8 +686,8 @@ class CafeSeeder extends Seeder
             }
         }
         
-        // 1. Bulk insert Fasilitas
-        DB::table('fasilitas')->insert($allFasilitas);
+        // 1. Bulk insert Fasilitas using insertOrIgnore to prevent duplicate slug errors
+        DB::table('fasilitas')->insertOrIgnore($allFasilitas);
         
         // Retrieve them to get IDs
         $fasilitasMap = DB::table('fasilitas')->pluck('id', 'slug')->toArray();
