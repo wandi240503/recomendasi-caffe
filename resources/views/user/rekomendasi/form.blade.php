@@ -42,17 +42,29 @@
                 @endforeach
             </div>
 
-            {{-- Selected count --}}
-            <div class="mb-4 text-center">
-                <p class="text-sm text-coffee-400" id="selected-count">Belum ada fasilitas dipilih</p>
-            </div>
-
-            <button type="submit" class="w-full py-4 bg-gradient-to-r from-coffee-700 to-coffee-600 text-white font-bold rounded-xl hover:from-coffee-600 hover:to-coffee-500 transition-all shadow-lg shadow-coffee-600/25 text-lg" id="submit-rekomendasi">
-                ✨ Dapatkan Rekomendasi
-            </button>
         </form>
     </div>
 </section>
+
+{{-- Sticky Bottom Bar --}}
+<div class="fixed bottom-0 left-0 right-0 z-50" id="sticky-btn-bar">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+        <div class="bg-white/80 backdrop-blur-md border border-coffee-100 rounded-2xl shadow-2xl shadow-coffee-900/20 px-5 py-3 flex items-center gap-4">
+            <p class="text-sm text-coffee-400 flex-1" id="selected-count">Belum ada fasilitas dipilih</p>
+            <button
+                type="submit"
+                form="rekomendasi-form"
+                id="submit-rekomendasi"
+                class="py-3 px-8 bg-gradient-to-r from-coffee-700 to-coffee-600 text-white font-bold rounded-xl hover:from-coffee-600 hover:to-coffee-500 transition-all shadow-lg shadow-coffee-600/25 text-base whitespace-nowrap"
+            >
+                ✨ Dapatkan Rekomendasi
+            </button>
+        </div>
+    </div>
+</div>
+
+{{-- Padding so last content isn't hidden behind sticky bar --}}
+<div class="h-24"></div>
 @endsection
 
 @push('scripts')
