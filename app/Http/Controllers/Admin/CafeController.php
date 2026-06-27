@@ -50,12 +50,26 @@ class CafeController extends Controller
             $cafe->fasilitas()->attach($request->fasilitas);
         }
 
-        // Upload foto
+        // Upload foto ke Cloudinary
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('cafes', 'public');
+            // Inisialisasi Cloudinary dengan kredensial .env (atau fallback)
+            $cloudinary = new \Cloudinary\Cloudinary([
+                'cloud_name' => env('CLOUDINARY_CLOUD_NAME', 'dlbr86qnd'),
+                'api_key'    => env('CLOUDINARY_API_KEY', '852678874433293'),
+                'api_secret' => env('CLOUDINARY_API_SECRET', 'DbzTppxmjvmGybgyFdmNkgWy7Tk'),
+                'secure' => true,
+            ]);
+            $uploadResult = $cloudinary->uploadApi()->upload(
+                $request->file('foto')->getRealPath(),
+                [
+                    'folder' => 'cafes',
+                    'public_id' => \Illuminate\Support\Str::slug($validated['name']) . '_' . time(),
+                ]
+            );
+            $url = $uploadResult['secure_url'];
             FotoCafe::create([
                 'cafe_id' => $cafe->id,
-                'url' => '/storage/' . $path,
+                'url' => $url,
                 'is_primary' => true,
                 'caption' => $cafe->name,
             ]);
@@ -97,14 +111,27 @@ class CafeController extends Controller
         // Sync fasilitas
         $cafe->fasilitas()->sync($request->fasilitas ?? []);
 
-        // Upload foto baru
+        // Upload foto baru ke Cloudinary
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('cafes', 'public');
+            $cloudinary = new \Cloudinary\Cloudinary([
+                'cloud_name' => env('CLOUDINARY_CLOUD_NAME', 'dlbr86qnd'),
+                'api_key'    => env('CLOUDINARY_API_KEY', '852678874433293'),
+                'api_secret' => env('CLOUDINARY_API_SECRET', 'DbzTppxmjvmGybgyFdmNkgWy7Tk'),
+                'secure' => true,
+            ]);
+            $uploadResult = $cloudinary->uploadApi()->upload(
+                $request->file('foto')->getRealPath(),
+                [
+                    'folder' => 'cafes',
+                    'public_id' => \Illuminate\Support\Str::slug($cafe->name) . '_' . time(),
+                ]
+            );
+            $url = $uploadResult['secure_url'];
             // Set semua foto lain jadi non-primary
             $cafe->fotos()->update(['is_primary' => false]);
             FotoCafe::create([
                 'cafe_id' => $cafe->id,
-                'url' => '/storage/' . $path,
+                'url' => $url,
                 'is_primary' => true,
                 'caption' => $cafe->name,
             ]);

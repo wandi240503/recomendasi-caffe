@@ -8,7 +8,11 @@
     $rounded = $rounded ?? '';
 @endphp
 
-@if($photo && file_exists(public_path(ltrim($photo->url, '/'))))
+@if($photo && (str_starts_with($photo->url, 'http://') || str_starts_with($photo->url, 'https://')))
+    <img src="{{ $photo->url }}" 
+         alt="{{ $cafe->name }}" 
+         class="w-full {{ $height }} object-cover {{ $rounded }}">
+@elseif($photo && file_exists(public_path(ltrim($photo->url, '/'))))
     <img src="{{ asset($photo->url) }}" 
          alt="{{ $cafe->name }}" 
          class="w-full {{ $height }} object-cover {{ $rounded }}">
