@@ -88,7 +88,7 @@
                 <div class="flex-1 w-full">
                     <input type="file" name="gallery_fotos[]" multiple accept="image/*" required class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-coffee-100 file:text-coffee-700 file:font-medium hover:file:bg-coffee-200">
                 </div>
-                <button type="submit" class="w-full sm:w-auto px-5 py-2.5 bg-coffee-700 text-white font-semibold rounded-xl hover:bg-coffee-600 transition-colors text-sm whitespace-nowrap">📤 Unggah Foto</button>
+                <button type="submit" class="px-5 py-2.5 bg-coffee-700 text-white font-semibold rounded-xl hover:bg-coffee-600 transition-colors text-sm whitespace-nowrap">📤 Unggah Foto</button>
             </div>
         </form>
 
