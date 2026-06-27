@@ -37,6 +37,20 @@
                     </div>
                 </div>
 
+                {{-- Galeri Foto Cafe --}}
+                @if($cafe->fotos->count() > 0)
+                <div class="bg-white rounded-2xl p-6 border border-coffee-100 mb-6">
+                    <h2 class="font-bold text-coffee-800 mb-4">📸 Galeri Foto Cafe</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        @foreach($cafe->fotos as $foto)
+                        <div class="h-32 rounded-xl overflow-hidden cursor-pointer border border-coffee-50 hover:border-coffee-300 hover:shadow-md transition-all duration-200" onclick="openLightbox('{{ $foto->url }}')">
+                            <img src="{{ $foto->url }}" alt="{{ $cafe->name }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
+
                 @if($cafe->gmaps_url)
                 <div class="bg-white rounded-2xl p-6 border border-coffee-100">
                     <h2 class="font-bold text-coffee-800 mb-4">Lokasi</h2>
@@ -44,6 +58,47 @@
                 </div>
                 @endif
             </div>
+
+            {{-- Lightbox Modal --}}
+            <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 transition-all duration-300">
+                <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-gray-300 text-4xl font-bold cursor-pointer focus:outline-none">&times;</button>
+                <div class="max-w-4xl max-h-[85vh] overflow-hidden">
+                    <img id="lightbox-img" src="" alt="Gallery Image" class="max-w-full max-h-[85vh] object-contain rounded-xl">
+                </div>
+            </div>
+
+            @push('scripts')
+            <script>
+                function openLightbox(imgUrl) {
+                    const lightbox = document.getElementById('lightbox');
+                    const lightboxImg = document.getElementById('lightbox-img');
+                    
+                    lightboxImg.src = imgUrl;
+                    lightbox.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Nonaktifkan scroll
+                }
+                
+                function closeLightbox() {
+                    const lightbox = document.getElementById('lightbox');
+                    lightbox.classList.add('hidden');
+                    document.body.style.overflow = ''; // Aktifkan scroll
+                }
+                
+                // Tutup lightbox jika klik area luar gambar
+                document.getElementById('lightbox').addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeLightbox();
+                    }
+                });
+
+                // Tutup dengan ESC
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    }
+                });
+            </script>
+            @endpush
 
             <div>
                 <div class="bg-white rounded-2xl p-6 border border-coffee-100 sticky top-24">

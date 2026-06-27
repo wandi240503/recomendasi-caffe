@@ -149,4 +149,85 @@ class CafeController extends Controller
         return redirect()->route('admin.cafe.index')
             ->with('success', 'Cafe "' . $name . '" berhasil dihapus!');
     }
+
+    public function uploadGallery(Request $request, Cafe $cafe)
+    {
+        $request->validate([
+            'gallery_fotos' => ['required', 'array'],
+            'gallery_fotos.*' => ['image', 'max:5120'], // maks 5MB per foto
+        ]);
+
+        if ($request->hasFile('gallery_fotos')) {
+            $cloudinary = new \Cloudinary\Cloudinary([
+                'cloud_name' => env('CLOUDINARY_CLOUD_NAME', 'dlbr86qnd'),
+                'api_key'    => env('CLOUDINARY_API_KEY', '852678874433293'),
+                'api_secret' => env('CLOUDINARY_API_SECRET', 'DbzTppxmjvmGybgyFdmNkgWy7Tk'),
+                'secure' => true,
+            ]);
+
+            foreach ($request->file('gallery_fotos') as $index => $file) {
+                $uploadResult = $cloudinary->uploadApi()->upload(
+                    $file->getRealPath(),
+                    [
+                        'folder' => 'cafes_gallery',
+                        'public_id' => \Illuminate\Support\Str::slug($cafe->name) . '_gallery_' . time() . '_' . $index,
+                    ]
+                );
+                
+                $url = $uploadResult['secure_url'];
+                
+                FotoCafe::create([
+                    'cafe_id' => $cafe->id,
+                    'url' => $url,
+                    'is_primary' => false,
+                    'caption' => $cafe->name . ' Gallery',
+                ]);
+            }
+        }
+
+        return redirect()->back()->with('success', 'Foto-foto galeri berhasil ditambahkan!');
+    }
+
+    public function deleteFoto(FotoCafe $foto)
+    {
+        $cafe = $foto->cafe;
+
+        // Jangan hapus jika foto tersebut adalah foto primary satu-satunya
+        if ($foto->is_primary) {
+            $anotherPhoto = $cafe->fotos()->where('id', '!=', $foto->id)->first();
+            if ($anotherPhoto) {
+                $anotherPhoto->update(['is_primary' => true]);
+            }
+        }
+
+        // Hapus file dari Cloudinary (jika URL adalah Cloudinary)
+        if (str_contains($foto->url, 'res.cloudinary.com')) {
+            try {
+                $pathParts = explode('/image/upload/', $foto->url);
+                if (count($pathParts) > 1) {
+                    $afterUpload = explode('/', $pathParts[1]);
+                    array_shift($afterUpload);
+                    $filename = implode('/', $afterUpload);
+                    $publicId = pathinfo($filename, PATHINFO_DIRNAME) . '/' . pathinfo($filename, PATHINFO_FILENAME);
+                    if (pathinfo($filename, PATHINFO_DIRNAME) === '.') {
+                        $publicId = pathinfo($filename, PATHINFO_FILENAME);
+                    }
+
+                    $cloudinary = new \Cloudinary\Cloudinary([
+                        'cloud_name' => env('CLOUDINARY_CLOUD_NAME', 'dlbr86qnd'),
+                        'api_key'    => env('CLOUDINARY_API_KEY', '852678874433293'),
+                        'api_secret' => env('CLOUDINARY_API_SECRET', 'DbzTppxmjvmGybgyFdmNkgWy7Tk'),
+                        'secure' => true,
+                    ]);
+                    $cloudinary->uploadApi()->destroy($publicId);
+                }
+            } catch (\Exception $e) {
+                // Abaikan error hapus Cloudinary agar data DB tetap bisa dihapus
+            }
+        }
+
+        $foto->delete();
+
+        return redirect()->back()->with('success', 'Foto berhasil dihapus!');
+    }
 }

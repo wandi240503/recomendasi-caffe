@@ -56,6 +56,8 @@ Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
     Route::get('/cafe/{cafe}/edit', [AdminCafeController::class, 'edit'])->name('admin.cafe.edit');
     Route::put('/cafe/{cafe}', [AdminCafeController::class, 'update'])->name('admin.cafe.update');
     Route::delete('/cafe/{cafe}', [AdminCafeController::class, 'destroy'])->name('admin.cafe.destroy');
+    Route::post('/cafe/{cafe}/gallery', [AdminCafeController::class, 'uploadGallery'])->name('admin.cafe.gallery.store');
+    Route::delete('/cafe/foto/{foto}', [AdminCafeController::class, 'deleteFoto'])->name('admin.cafe.foto.destroy');
 
     // CRUD Fasilitas
     Route::get('/fasilitas', [FasilitasController::class, 'index'])->name('admin.fasilitas.index');
