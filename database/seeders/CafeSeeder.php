@@ -717,8 +717,7 @@ class CafeSeeder extends Seeder
         DB::table('cafes')->insert($cafeInserts);
         $cafeMap = DB::table('cafes')->pluck('id', 'slug')->toArray();
         
-        // 3. Prepare Pivot and Photos
-        $pivotInserts = [];
+        // 3. Prepare Photos
         $photoInserts = [];
         
         foreach ($cafes as $idx => $cafe) {
@@ -734,21 +733,9 @@ class CafeSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now
             ];
-            
-            // Pivot
-            foreach ($cafe['fasilitas'] as $f) {
-                $fSlug = Str::slug($f);
-                if (isset($fasilitasMap[$fSlug])) {
-                    $pivotInserts[] = [
-                        'cafe_id' => $cafeId,
-                        'fasilitas_id' => $fasilitasMap[$fSlug]
-                    ];
-                }
-            }
         }
         
-        // Bulk insert pivot and photos
-        DB::table('cafe_fasilitas')->insert($pivotInserts);
+        // Bulk insert photos
         DB::table('foto_cafes')->insert($photoInserts);
     }
 }
