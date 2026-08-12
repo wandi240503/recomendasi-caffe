@@ -47,6 +47,6 @@ $slug = \Illuminate\Support\Str::slug($name);
 $path = $icons[$slug] ?? $icons['coffee'] ?? '';
 @endphp
 
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" {{ $attributes->merge(['class' => $class]) }}>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="max-width: 100%; max-height: 100%;" {{ $attributes->merge(['class' => $class]) }}>
     {!! $path !!}
 </svg>
