@@ -77,38 +77,12 @@ Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
 
 Route::get('/import-database', function () {
     try {
-        // Hapus tabel secara manual satu per satu untuk menghindari error PgBouncer saat migrate:fresh
-        $tables = [
-            'rekomendasis', 'cafe_fasilitas', 'foto_cafes', 'cafes', 'fasilitas', 'admins', 
-            'users', 'password_reset_tokens', 'sessions', 'cache', 'cache_locks', 
-            'jobs', 'job_batches', 'failed_jobs', 'migrations'
-        ];
-        
-        foreach ($tables as $table) {
-            try {
-                \Illuminate\Support\Facades\DB::statement("DROP TABLE IF EXISTS {$table} CASCADE");
-            } catch (\Exception $e) {
-                // Abaikan error drop jika tabel bermasalah
-            }
-        }
-        
-        // Install migrations repository first
-        try {
-            \Illuminate\Support\Facades\Artisan::call('migrate:install', ['--force' => true]);
-        } catch (\Exception $e) {
-        }
-        
-        // Buat ulang semua tabel dengan bersih
-        \Illuminate\Support\Facades\Artisan::call('migrate', [
-            '--force' => true
+        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
+            '--force' => true,
+            '--seed' => true,
         ]);
         
-        // Masukkan data 50 Cafe & 20 Fasilitas Bersih
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--force' => true
-        ]);
-        
-        return "Migrasi dan Seeding Database berhasil 100%! Data cafe sudah siap digunakan.";
+        return "Migrasi dan Seeding Database berhasil 100%! Data 20 fasilitas bersih & 50 cafe sudah siap digunakan di Vercel.";
     } catch (\Exception $e) {
         return "Error saat memasukkan data: " . $e->getMessage();
     }
