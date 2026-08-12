@@ -32,7 +32,10 @@
                         <div class="flex items-start justify-between mb-2">
                             <div>
                                 <a href="{{ route('cafe.show', $item['cafe']->slug) }}" class="text-xl font-bold text-coffee-800 hover:text-coffee-600 transition-colors">{{ $item['cafe']->name }}</a>
-                                <p class="text-sm text-coffee-400 mt-1">📍 {{ $item['cafe']->address }}</p>
+                                <p class="text-sm text-coffee-400 mt-1 flex items-center gap-1">
+                                    <x-facility-icon name="map-pin" class="w-4 h-4" />
+                                    {{ $item['cafe']->address }}
+                                </p>
                             </div>
                             <div class="text-right flex-shrink-0 ml-4">
                                 <div class="text-2xl font-extrabold text-coffee-700">{{ $item['percentage'] }}%</div>
@@ -41,43 +44,64 @@
                         </div>
 
                         {{-- Similarity Bar --}}
-                        <div class="w-full bg-coffee-100 rounded-full h-2.5 mb-4">
-                            <div class="h-2.5 rounded-full transition-all {{ $item['percentage'] >= 80 ? 'bg-green-500' : ($item['percentage'] >= 50 ? 'bg-yellow-500' : 'bg-orange-500') }}"
+                        <div class="w-full bg-coffee-100 rounded-full h-2.5 mb-4 overflow-hidden">
+                            <div class="h-full rounded-full transition-all {{ $item['percentage'] >= 80 ? 'bg-green-500' : ($item['percentage'] >= 50 ? 'bg-yellow-500' : 'bg-orange-500') }}"
                                  style="width: {{ $item['percentage'] }}%"></div>
                         </div>
 
                         {{-- Matched Fasilitas --}}
-                        <div class="flex flex-wrap gap-1.5 mb-3">
+                        <div class="flex flex-wrap gap-2 mb-4">
                             @foreach($item['cafe']->fasilitas as $f)
-                            <span class="px-2.5 py-1 rounded-lg text-xs font-medium {{ in_array($f->id, $selectedIds) ? 'bg-green-100 text-green-700 ring-1 ring-green-200' : 'bg-coffee-50 text-coffee-400' }}">
-                                {{ $f->icon }} {{ $f->name }} {{ in_array($f->id, $selectedIds) ? '✓' : '' }}
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium {{ in_array($f->id, $selectedIds) ? 'bg-green-100 text-green-700 ring-1 ring-green-200' : 'bg-coffee-50 text-coffee-500' }}">
+                                <x-facility-icon :name="$f->slug" class="w-3.5 h-3.5" />
+                                {{ $f->name }} 
+                                @if(in_array($f->id, $selectedIds))
+                                    <x-facility-icon name="check" class="w-3.5 h-3.5 ml-0.5" />
+                                @endif
                             </span>
                             @endforeach
                         </div>
 
-                        <div class="flex items-center gap-4 text-sm text-coffee-400">
-                            <span>⭐ {{ number_format($item['cafe']->rating, 1) }}</span>
-                            <span>💰 {{ $item['cafe']->formatted_price }}</span>
-                            <span>🕐 {{ $item['cafe']->open_time }}-{{ $item['cafe']->close_time }}</span>
-                            <span>🎯 {{ $item['matched_count'] }}/{{ $item['total_selected'] }} fasilitas cocok</span>
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-coffee-500 bg-coffee-50/50 p-3 rounded-xl">
+                            <div class="flex items-center gap-1.5">
+                                <x-facility-icon name="star" class="w-4 h-4 text-yellow-500" />
+                                <span class="font-medium">{{ number_format($item['cafe']->rating, 1) }}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <x-facility-icon name="money" class="w-4 h-4 text-green-600" />
+                                <span>{{ $item['cafe']->formatted_price }}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <x-facility-icon name="clock" class="w-4 h-4 text-blue-500" />
+                                <span>{{ $item['cafe']->open_time }} - {{ $item['cafe']->close_time }}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 ml-auto">
+                                <x-facility-icon name="target" class="w-4 h-4 text-red-500" />
+                                <span class="font-medium text-coffee-700">{{ $item['matched_count'] }}/{{ $item['total_selected'] }} cocok</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 {{-- Vector Detail (collapsible) --}}
-                <details class="mt-4 pt-4 border-t border-coffee-50">
-                    <summary class="text-xs text-coffee-400 cursor-pointer hover:text-coffee-600">Lihat detail vektor & perhitungan</summary>
+                <details class="mt-4 pt-4 border-t border-coffee-50 group">
+                    <summary class="text-xs text-coffee-400 cursor-pointer hover:text-coffee-600 flex items-center gap-1 select-none">
+                        <x-facility-icon name="chevron-down" class="w-3.5 h-3.5 transition-transform group-open:rotate-180" />
+                        Lihat detail vektor & perhitungan
+                    </summary>
                     <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                        <div class="bg-coffee-50 p-3 rounded-xl">
-                            <p class="font-semibold text-coffee-600 mb-1">User Vector:</p>
-                            <code class="text-coffee-500">[{{ implode(', ', $item['user_vector']) }}]</code>
+                        <div class="bg-coffee-50 p-3 rounded-xl border border-coffee-100">
+                            <p class="font-semibold text-coffee-700 mb-1">User Vector:</p>
+                            <code class="text-coffee-600 font-mono break-all">[{{ implode(', ', $item['user_vector']) }}]</code>
                         </div>
-                        <div class="bg-coffee-50 p-3 rounded-xl">
-                            <p class="font-semibold text-coffee-600 mb-1">Cafe Vector:</p>
-                            <code class="text-coffee-500">[{{ implode(', ', $item['cafe_vector']) }}]</code>
+                        <div class="bg-coffee-50 p-3 rounded-xl border border-coffee-100">
+                            <p class="font-semibold text-coffee-700 mb-1">Cafe Vector:</p>
+                            <code class="text-coffee-600 font-mono break-all">[{{ implode(', ', $item['cafe_vector']) }}]</code>
                         </div>
                     </div>
-                    <p class="text-xs text-coffee-400 mt-2">Cosine Similarity = {{ $item['similarity'] }}</p>
+                    <div class="bg-coffee-50/50 p-3 rounded-xl mt-3 border border-coffee-50">
+                        <p class="text-xs text-coffee-600 font-medium">Cosine Similarity = <span class="font-mono">{{ $item['similarity'] }}</span></p>
+                    </div>
                 </details>
             </div>
             @endif
@@ -86,7 +110,10 @@
 
         {{-- Back --}}
         <div class="text-center mt-10">
-            <a href="{{ route('rekomendasi.form') }}" class="px-8 py-3 bg-coffee-700 text-white font-semibold rounded-xl hover:bg-coffee-600 transition-colors">← Cari Lagi</a>
+            <a href="{{ route('rekomendasi.form') }}" class="inline-flex items-center gap-2 px-8 py-3 bg-coffee-700 text-white font-semibold rounded-xl hover:bg-coffee-600 transition-colors shadow-lg shadow-coffee-600/20">
+                <x-facility-icon name="arrow-left" class="w-5 h-5" />
+                Cari Lagi
+            </a>
         </div>
     </div>
 </section>

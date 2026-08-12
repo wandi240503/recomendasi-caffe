@@ -7,16 +7,20 @@
 
 @theme {
     --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-    --color-coffee-900: #1a0e0a;
-    --color-coffee-800: #2C1810;
-    --color-coffee-700: #3d221a;
-    --color-coffee-600: #6B3A2A;
-    --color-coffee-500: #8B5E3C;
-    --color-coffee-400: #C4956A;
-    --color-coffee-300: #D4A574;
-    --color-coffee-200: #E8C9A0;
-    --color-coffee-100: #F5E6D3;
-    --color-coffee-50: #FDF6EE;
-    --color-cream: #FDF6EE;
-    --color-cream-dark: #F5E6D3;
+    /* Forest Green Primary (hero, footer, buttons, sidebar) */
+    --color-coffee-900: #0B2618;
+    --color-coffee-800: #14432A;
+    --color-coffee-700: #1B4332;
+    --color-coffee-600: #2D6A4F;
+    /* Neutral Text (body copy, descriptions) */
+    --color-coffee-500: #374151;
+    --color-coffee-400: #6B7280;
+    /* Warm Gold Accent (highlights, badges, special elements) */
+    --color-coffee-300: #D4A373;
+    --color-coffee-200: #FAEDCD;
+    /* Surface & Borders */
+    --color-coffee-100: #E8E2D9;
+    --color-coffee-50: #F7F4EF;
+    --color-cream: #FDFBF7;
+    --color-cream-dark: #F0EBE0;
 }

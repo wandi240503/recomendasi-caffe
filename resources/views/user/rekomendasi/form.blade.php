@@ -12,112 +12,236 @@
 
         <form action="{{ route('rekomendasi.hasil') }}" method="POST" class="bg-white rounded-2xl p-8 shadow-sm border border-coffee-100" id="rekomendasi-form">
             @csrf
-            <h2 class="font-bold text-coffee-800 mb-6 text-lg">Fasilitas yang diinginkan:</h2>
-
+            
             @error('fasilitas')
             <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm mb-6">{{ $message }}</div>
             @enderror
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-8">
-                @foreach($fasilitas as $f)
-                <label class="cursor-pointer block" id="fasilitas-{{ $f->id }}" onclick="toggleCard(this)">
-                    <input type="checkbox" name="fasilitas[]" value="{{ $f->id }}" class="hidden fasilitas-checkbox" {{ in_array($f->id, old('fasilitas', [])) ? 'checked' : '' }}>
-                    <div class="fasilitas-card flex items-center gap-3 p-4 rounded-xl border-2 border-coffee-100 hover:border-coffee-300 transition-all hover:shadow-md">
-                        <span class="text-2xl">{{ $f->icon }}</span>
-                        <div class="flex-1">
-                            <p class="font-semibold text-coffee-800 text-sm">{{ $f->name }}</p>
-                            <p class="fasilitas-hint text-xs text-coffee-400">Klik untuk memilih</p>
+            @php
+            $groupDefs = [
+              'Indoor' => ['AC', 'WiFi', 'Colokan/Charger', 'Meja Kerja', 'Meeting Room', 'Sofa', 'Buka 24 Jam'],
+              'Outdoor' => ['Semi-Outdoor', 'Garden/Taman', 'Spot Foto', 'Pet-Friendly', 'Live Music'],
+            ];
+            $standaloneDefs = ['Smoking Area', 'Rooftop'];
+            
+            $groups = ['Indoor' => [], 'Outdoor' => []];
+            $standalone = [];
+            $general = [];
+            
+            foreach($fasilitas as $f) {
+                if(in_array($f->name, $groupDefs['Indoor'])) $groups['Indoor'][] = $f;
+                elseif(in_array($f->name, $groupDefs['Outdoor'])) $groups['Outdoor'][] = $f;
+                elseif(in_array($f->name, $standaloneDefs)) $standalone[] = $f;
+                else $general[] = $f;
+            }
+            @endphp
+
+            <div class="space-y-6">
+                {{-- Group 1 & 2: Accordions --}}
+                @foreach(['Indoor', 'Outdoor'] as $groupName)
+                <div class="accordion-group border border-coffee-200 rounded-2xl overflow-hidden">
+                    <div class="bg-coffee-50 p-4 flex items-center justify-between cursor-pointer accordion-header transition-colors hover:bg-coffee-100" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="parent-checkbox w-5 h-5 text-green-600 rounded border-coffee-300 focus:ring-green-500" onclick="event.stopPropagation(); toggleParent(this, '{{ $groupName }}')">
+                            <span class="font-bold text-coffee-800">{{ $groupName }}</span>
                         </div>
-                        {{-- Unchecked circle --}}
-                        <div class="fasilitas-unchecked w-6 h-6 rounded-full border-2 border-coffee-200 flex items-center justify-center transition-all">
-                        </div>
-                        {{-- Checked circle with checkmark --}}
-                        <div class="fasilitas-checked w-6 h-6 rounded-full bg-green-500 border-2 border-green-500 items-center justify-center transition-all hidden">
-                            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <div class="text-coffee-400 transition-transform duration-300 transform accordion-icon">
+                            <x-facility-icon name="chevron-down" class="w-5 h-5" />
                         </div>
                     </div>
-                </label>
+                    <div class="accordion-content hidden bg-white p-4 border-t border-coffee-100">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3" data-group="{{ $groupName }}">
+                            @foreach($groups[$groupName] as $f)
+                            <label class="cursor-pointer block">
+                                <input type="checkbox" name="fasilitas[]" value="{{ $f->id }}" class="hidden child-checkbox facility-checkbox" onchange="updateParent('{{ $groupName }}'); updateCount(); toggleCardStyle(this)" {{ in_array($f->id, old('fasilitas', [])) ? 'checked' : '' }}>
+                                <div class="facility-card flex items-center gap-3 p-3 rounded-xl border border-coffee-100 hover:border-coffee-300 transition-all hover:shadow-sm">
+                                    <div class="text-coffee-600">
+                                        <x-facility-icon :name="$f->slug" class="w-6 h-6" />
+                                    </div>
+                                    <span class="font-medium text-coffee-800 text-sm flex-1">{{ $f->name }}</span>
+                                    <div class="checkbox-indicator w-5 h-5 rounded border border-coffee-300 flex items-center justify-center transition-all">
+                                        <x-facility-icon name="check" class="w-3.5 h-3.5 text-white hidden check-icon" />
+                                    </div>
+                                </div>
+                            </label>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div>
 
+                {{-- Group 3 & 4: Standalone --}}
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    @foreach($standalone as $f)
+                    <label class="cursor-pointer block">
+                        <input type="checkbox" name="fasilitas[]" value="{{ $f->id }}" class="hidden facility-checkbox" onchange="updateCount(); toggleCardStyle(this)" {{ in_array($f->id, old('fasilitas', [])) ? 'checked' : '' }}>
+                        <div class="facility-card flex items-center gap-3 p-3 rounded-xl border border-coffee-100 hover:border-coffee-300 transition-all hover:shadow-sm">
+                            <div class="text-coffee-600">
+                                <x-facility-icon :name="$f->slug" class="w-6 h-6" />
+                            </div>
+                            <span class="font-medium text-coffee-800 text-sm flex-1">{{ $f->name }}</span>
+                            <div class="checkbox-indicator w-5 h-5 rounded border border-coffee-300 flex items-center justify-center transition-all">
+                                <x-facility-icon name="check" class="w-3.5 h-3.5 text-white hidden check-icon" />
+                            </div>
+                        </div>
+                    </label>
+                    @endforeach
+                </div>
+
+                {{-- Group 5: General Attributes --}}
+                <div>
+                    <h3 class="font-bold text-coffee-800 mb-3 mt-6">Atribut Umum</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                        @foreach($general as $f)
+                        <label class="cursor-pointer block">
+                            <input type="checkbox" name="fasilitas[]" value="{{ $f->id }}" class="hidden facility-checkbox" onchange="updateCount(); toggleCardStyle(this)" {{ in_array($f->id, old('fasilitas', [])) ? 'checked' : '' }}>
+                            <div class="facility-card flex items-center gap-3 p-3 rounded-xl border border-coffee-100 hover:border-coffee-300 transition-all hover:shadow-sm">
+                                <div class="text-coffee-600">
+                                    <x-facility-icon :name="$f->slug" class="w-6 h-6" />
+                                </div>
+                                <span class="font-medium text-coffee-800 text-sm flex-1">{{ $f->name }}</span>
+                                <div class="checkbox-indicator w-5 h-5 rounded border border-coffee-300 flex items-center justify-center transition-all">
+                                    <x-facility-icon name="check" class="w-3.5 h-3.5 text-white hidden check-icon" />
+                                </div>
+                            </div>
+                        </label>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </section>
 
 {{-- Sticky Bottom Bar --}}
-<div class="fixed bottom-0 left-0 right-0 z-50" id="sticky-btn-bar">
+<div class="fixed bottom-0 left-0 right-0 z-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
         <div class="bg-white/80 backdrop-blur-md border border-coffee-100 rounded-2xl shadow-2xl shadow-coffee-900/20 px-5 py-3 flex items-center gap-4">
-            <p class="text-sm text-coffee-400 flex-1" id="selected-count">Belum ada fasilitas dipilih</p>
+            <p class="text-sm text-coffee-400 flex-1 font-medium" id="selected-count">0 fasilitas dipilih</p>
             <button
                 type="submit"
                 form="rekomendasi-form"
-                id="submit-rekomendasi"
-                class="py-3 px-8 bg-gradient-to-r from-coffee-700 to-coffee-600 text-white font-bold rounded-xl hover:from-coffee-600 hover:to-coffee-500 transition-all shadow-lg shadow-coffee-600/25 text-base whitespace-nowrap"
+                class="py-3 px-8 bg-gradient-to-r from-coffee-700 to-coffee-600 text-white font-bold rounded-xl hover:from-coffee-600 hover:to-coffee-500 transition-all shadow-lg shadow-coffee-600/25 text-base whitespace-nowrap flex items-center gap-2"
             >
-                ✨ Dapatkan Rekomendasi
+                <x-facility-icon name="sparkles" class="w-5 h-5" />
+                Dapatkan Rekomendasi
             </button>
         </div>
     </div>
 </div>
 
-{{-- Padding so last content isn't hidden behind sticky bar --}}
 <div class="h-24"></div>
 @endsection
 
 @push('scripts')
 <script>
-function toggleCard(label) {
-    // Delay to let the checkbox toggle first
-    setTimeout(() => {
-        const checkbox = label.querySelector('.fasilitas-checkbox');
-        const card = label.querySelector('.fasilitas-card');
-        const unchecked = label.querySelector('.fasilitas-unchecked');
-        const checked = label.querySelector('.fasilitas-checked');
-        const hint = label.querySelector('.fasilitas-hint');
-
-        if (checkbox.checked) {
-            card.classList.remove('border-coffee-100');
-            card.classList.add('border-green-400', 'bg-green-50', 'shadow-md');
-            unchecked.classList.add('hidden');
-            checked.classList.remove('hidden');
-            checked.classList.add('flex');
-            hint.textContent = '✓ Dipilih';
-            hint.classList.remove('text-coffee-400');
-            hint.classList.add('text-green-600', 'font-medium');
-        } else {
-            card.classList.add('border-coffee-100');
-            card.classList.remove('border-green-400', 'bg-green-50', 'shadow-md');
-            unchecked.classList.remove('hidden');
-            checked.classList.add('hidden');
-            checked.classList.remove('flex');
-            hint.textContent = 'Klik untuk memilih';
-            hint.classList.add('text-coffee-400');
-            hint.classList.remove('text-green-600', 'font-medium');
-        }
-
-        updateCount();
-    }, 10);
-}
-
-function updateCount() {
-    const checked = document.querySelectorAll('.fasilitas-checkbox:checked').length;
-    const el = document.getElementById('selected-count');
-    if (checked === 0) {
-        el.textContent = 'Belum ada fasilitas dipilih';
+function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.accordion-icon');
+    
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
     } else {
-        el.textContent = checked + ' fasilitas dipilih';
-        el.classList.add('text-green-600', 'font-medium');
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
     }
 }
 
-// Initialize on page load (for old() values)
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.fasilitas-checkbox:checked').forEach(cb => {
-        toggleCard(cb.closest('label'));
+function toggleParent(checkbox, groupName) {
+    const isChecked = checkbox.checked;
+    const container = document.querySelector(`[data-group="${groupName}"]`);
+    if (container) {
+        const children = container.querySelectorAll('.child-checkbox');
+        children.forEach(child => {
+            if (child.checked !== isChecked) {
+                child.checked = isChecked;
+                toggleCardStyle(child);
+            }
+        });
+        updateCount();
+    }
+}
+
+function updateParent(groupName) {
+    const container = document.querySelector(`[data-group="${groupName}"]`);
+    if (container) {
+        const parentCheckbox = container.closest('.accordion-group').querySelector('.parent-checkbox');
+        const children = container.querySelectorAll('.child-checkbox');
+        const checkedCount = container.querySelectorAll('.child-checkbox:checked').length;
+        
+        if (checkedCount === 0) {
+            parentCheckbox.checked = false;
+            parentCheckbox.indeterminate = false;
+        } else if (checkedCount === children.length) {
+            parentCheckbox.checked = true;
+            parentCheckbox.indeterminate = false;
+        } else {
+            parentCheckbox.checked = false;
+            parentCheckbox.indeterminate = true;
+        }
+    }
+}
+
+function toggleCardStyle(checkbox) {
+    const card = checkbox.closest('label').querySelector('.facility-card');
+    const indicator = checkbox.closest('label').querySelector('.checkbox-indicator');
+    const checkIcon = checkbox.closest('label').querySelector('.check-icon');
+    const iconContainer = checkbox.closest('label').querySelector('.text-coffee-600, .text-green-600');
+    
+    if (checkbox.checked) {
+        card.classList.remove('border-coffee-100');
+        card.classList.add('border-green-400', 'bg-green-50', 'shadow-md');
+        
+        indicator.classList.remove('border-coffee-300');
+        indicator.classList.add('bg-green-500', 'border-green-500');
+        
+        checkIcon.classList.remove('hidden');
+        
+        if (iconContainer) {
+            iconContainer.classList.remove('text-coffee-600');
+            iconContainer.classList.add('text-green-600');
+        }
+    } else {
+        card.classList.add('border-coffee-100');
+        card.classList.remove('border-green-400', 'bg-green-50', 'shadow-md');
+        
+        indicator.classList.add('border-coffee-300');
+        indicator.classList.remove('bg-green-500', 'border-green-500');
+        
+        checkIcon.classList.add('hidden');
+        
+        if (iconContainer) {
+            iconContainer.classList.add('text-coffee-600');
+            iconContainer.classList.remove('text-green-600');
+        }
+    }
+}
+
+function updateCount() {
+    const count = document.querySelectorAll('.facility-checkbox:checked').length;
+    const el = document.getElementById('selected-count');
+    if (count === 0) {
+        el.textContent = 'Belum ada fasilitas dipilih';
+        el.className = 'text-sm text-coffee-400 flex-1 font-medium';
+    } else {
+        el.textContent = `${count} fasilitas dipilih`;
+        el.className = 'text-sm text-green-600 flex-1 font-bold';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.facility-checkbox').forEach(cb => {
+        if (cb.checked) {
+            toggleCardStyle(cb);
+        }
     });
+    
+    ['Indoor', 'Outdoor'].forEach(group => {
+        updateParent(group);
+    });
+    
+    updateCount();
 });
 </script>
 @endpush
