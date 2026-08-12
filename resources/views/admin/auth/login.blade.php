@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin — CafeRekomendasi</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -17,11 +19,8 @@
 
     <div class="w-full max-w-md z-10">
         <div class="text-center mb-10">
-            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 mb-4 shadow-xl">
-                <svg class="w-8 h-8 text-coffee-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12h19.5" />
-                </svg>
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 mb-4 shadow-xl p-2">
+                <img src="{{ asset('images/logo.png') }}" alt="CafeRekomendasi Logo" class="w-full h-full object-contain">
             </div>
             <h1 class="text-3xl font-extrabold text-white tracking-tight">CafeRekomendasi</h1>
             <p class="text-coffee-300 font-medium mt-2">Secure Admin Portal</p>

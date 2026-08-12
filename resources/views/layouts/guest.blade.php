@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CafeRekomendasi - Sistem rekomendasi cafe terbaik menggunakan Content-Based Filtering & Cosine Similarity">
     <title>@yield('title', 'CafeRekomendasi')</title>
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,11 +22,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 {{-- Logo --}}
-                <a href="{{ route('home') }}" class="flex items-center gap-2 group">
-                    <svg class="w-8 h-8 text-coffee-700 group-hover:text-coffee-500 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12h19.5" />
-                    </svg>
+                <a href="{{ route('home') }}" class="flex items-center gap-2.5 group">
+                    <img src="{{ asset('images/logo.png') }}" alt="CafeRekomendasi Logo" class="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-300">
                     <span class="text-xl font-bold bg-gradient-to-r from-coffee-800 to-coffee-500 bg-clip-text text-transparent group-hover:from-coffee-600 group-hover:to-coffee-400 transition-all duration-300">
                         CafeRekomendasi
                     </span>
@@ -122,11 +120,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4 group">
-                        <svg class="w-8 h-8 text-coffee-300 group-hover:text-coffee-200 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12h19.5" />
-                        </svg>
+                    <div class="flex items-center gap-2.5 mb-4 group">
+                        <img src="{{ asset('images/logo.png') }}" alt="CafeRekomendasi Logo" class="w-9 h-9 object-contain bg-white/10 rounded-xl p-1 group-hover:scale-105 transition-transform duration-300">
                         <span class="text-xl font-bold text-white group-hover:text-coffee-100 transition-all duration-300">CafeRekomendasi</span>
                     </div>
                     <p class="text-coffee-300 text-sm leading-relaxed mb-6 max-w-sm">
