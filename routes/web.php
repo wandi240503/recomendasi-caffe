@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | User Routes
 |--------------------------------------------------------------------------
-*/
+Route::get('/favicon.ico', function () {
+    return response()->file(public_path('favicon.ico'));
+});
+Route::get('/favicon.png', function () {
+    return response()->file(public_path('favicon.png'));
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
