@@ -98,10 +98,10 @@ class FasilitasBersihSeeder extends Seeder
         $this->command->info('🧹 Membersihkan fasilitas lama...');
 
         // 1. Hapus semua relasi pivot
-        DB::table('cafe_fasilitas')->truncate();
+        DB::table('cafe_fasilitas')->delete();
 
         // 2. Hapus semua fasilitas lama
-        DB::table('fasilitas')->truncate();
+        DB::table('fasilitas')->delete();
 
         $this->command->info('✅ Lama dihapus. Memasukkan 20 fasilitas inti...');
 
