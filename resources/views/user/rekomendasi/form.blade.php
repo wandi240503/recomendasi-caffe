@@ -24,28 +24,44 @@
             ];
             $standaloneDefs = ['Smoking Area', 'Rooftop'];
             
+            $parentObjs = [];
             $groups = ['Indoor' => [], 'Outdoor' => []];
             $standalone = [];
             $general = [];
             
             foreach($fasilitas as $f) {
-                if(in_array($f->name, $groupDefs['Indoor'])) $groups['Indoor'][] = $f;
-                elseif(in_array($f->name, $groupDefs['Outdoor'])) $groups['Outdoor'][] = $f;
-                elseif(in_array($f->name, $standaloneDefs)) $standalone[] = $f;
-                else $general[] = $f;
+                if ($f->name === 'Indoor' || $f->name === 'Outdoor') {
+                    $parentObjs[$f->name] = $f;
+                }
+                
+                if (in_array($f->name, $groupDefs['Indoor'])) $groups['Indoor'][] = $f;
+                elseif (in_array($f->name, $groupDefs['Outdoor'])) $groups['Outdoor'][] = $f;
+                elseif (in_array($f->name, $standaloneDefs)) $standalone[] = $f;
+                elseif ($f->name !== 'Indoor' && $f->name !== 'Outdoor') $general[] = $f;
             }
             @endphp
 
             <div class="space-y-6">
-                {{-- Group 1 & 2: Accordions --}}
+                {{-- Group 1 & 2: Accordions (Indoor & Outdoor) --}}
                 @foreach(['Indoor', 'Outdoor'] as $groupName)
+                @php $parentF = $parentObjs[$groupName] ?? null; @endphp
                 <div class="accordion-group border border-coffee-200 rounded-2xl overflow-hidden">
                     <div class="bg-coffee-50 p-4 flex items-center justify-between cursor-pointer accordion-header transition-colors hover:bg-coffee-100" onclick="toggleAccordion(this)">
                         <div class="flex items-center gap-3">
-                            <input type="checkbox" class="parent-checkbox w-5 h-5 text-green-600 rounded border-coffee-300 focus:ring-green-500" onclick="event.stopPropagation(); toggleParent(this, '{{ $groupName }}')">
-                            <span class="font-bold text-coffee-800">{{ $groupName }}</span>
+                            @if($parentF)
+                            <input type="checkbox" name="fasilitas[]" value="{{ $parentF->id }}" class="parent-checkbox facility-checkbox w-5 h-5 text-green-600 rounded border-coffee-300 focus:ring-green-500 cursor-pointer" onclick="event.stopPropagation(); toggleParent(this, '{{ $groupName }}')" {{ in_array($parentF->id, old('fasilitas', [])) ? 'checked' : '' }}>
+                            @else
+                            <input type="checkbox" class="parent-checkbox w-5 h-5 text-green-600 rounded border-coffee-300 focus:ring-green-500 cursor-pointer" onclick="event.stopPropagation(); toggleParent(this, '{{ $groupName }}')">
+                            @endif
+                            <div class="flex items-center gap-2">
+                                @if($parentF)
+                                <x-facility-icon :name="$parentF->slug" class="w-5 h-5 text-coffee-700" />
+                                @endif
+                                <span class="font-bold text-coffee-800 text-base">{{ $groupName }}</span>
+                            </div>
                         </div>
-                        <div class="text-coffee-400 transition-transform duration-300 transform accordion-icon">
+                        <div class="text-coffee-400 transition-transform duration-300 transform accordion-icon flex items-center gap-2">
+                            <span class="text-xs text-coffee-400 font-normal">Klik untuk lihat detail</span>
                             <x-facility-icon name="chevron-down" class="w-5 h-5" />
                         </div>
                     </div>
