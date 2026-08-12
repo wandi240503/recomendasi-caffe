@@ -92,12 +92,18 @@ Route::get('/import-database', function () {
             }
         }
         
+        // Install migrations repository first
+        try {
+            \Illuminate\Support\Facades\Artisan::call('migrate:install', ['--force' => true]);
+        } catch (\Exception $e) {
+        }
+        
         // Buat ulang semua tabel dengan bersih
         \Illuminate\Support\Facades\Artisan::call('migrate', [
             '--force' => true
         ]);
         
-        // Masukkan data 50 Cafe
+        // Masukkan data 50 Cafe & 20 Fasilitas Bersih
         \Illuminate\Support\Facades\Artisan::call('db:seed', [
             '--force' => true
         ]);
