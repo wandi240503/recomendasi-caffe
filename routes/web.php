@@ -35,6 +35,9 @@ Route::get('/tentang', function () {
 */
 
 Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return redirect()->route('admin.login');
+    });
     Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
     Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login.post');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');

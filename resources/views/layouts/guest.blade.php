@@ -144,21 +144,25 @@
                 <div>
                     <h4 class="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Tautan Menu</h4>
                     <div class="flex flex-col gap-3">
-                        <a href="{{ route('home') }}" class="text-sm text-coffee-300 hover:text-coffee-100 transition-all duration-300 flex items-center gap-2">
+                        <a href="{{ route('home') }}" class="text-sm text-coffee-300 hover:text-white transition-all duration-300 flex items-center gap-2">
                             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
                             Beranda
                         </a>
-                        <a href="{{ route('cafe.index') }}" class="text-sm text-coffee-300 hover:text-coffee-100 transition-all duration-300 flex items-center gap-2">
+                        <a href="{{ route('cafe.index') }}" class="text-sm text-coffee-300 hover:text-white transition-all duration-300 flex items-center gap-2">
                             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
                             Daftar Cafe
                         </a>
-                        <a href="{{ route('rekomendasi.form') }}" class="text-sm text-coffee-300 hover:text-coffee-100 transition-all duration-300 flex items-center gap-2">
+                        <a href="{{ route('rekomendasi.form') }}" class="text-sm text-coffee-300 hover:text-white transition-all duration-300 flex items-center gap-2">
                             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
                             Rekomendasi
                         </a>
-                        <a href="{{ route('about') }}" class="text-sm text-coffee-300 hover:text-coffee-100 transition-all duration-300 flex items-center gap-2">
+                        <a href="{{ route('about') }}" class="text-sm text-coffee-300 hover:text-white transition-all duration-300 flex items-center gap-2">
                             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
                             Tentang
+                        </a>
+                        <a href="{{ route('admin.login') }}" class="text-sm text-coffee-200 font-semibold hover:text-white transition-all duration-300 flex items-center gap-2 pt-2 border-t border-coffee-700/60">
+                            <svg class="w-3.5 h-3.5 text-coffee-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                            Login Admin
                         </a>
                     </div>
                 </div>
@@ -173,9 +177,9 @@
                 </div>
             </div>
             <div class="border-t border-coffee-700 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-coffee-400">&copy; {{ date('Y') }} CafeRekomendasi — Sistem Rekomendasi</p>
-                <a href="{{ route('admin.login') }}" class="text-sm text-coffee-500 hover:text-coffee-300 transition-all duration-300 flex items-center gap-1.5">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                <p class="text-sm text-coffee-300">&copy; {{ date('Y') }} CafeRekomendasi — Sistem Rekomendasi</p>
+                <a href="{{ route('admin.login') }}" class="text-xs font-semibold text-coffee-200 hover:text-white bg-coffee-700/60 hover:bg-coffee-600 px-3.5 py-1.5 rounded-lg border border-coffee-600 transition-all duration-300 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                     Admin Area
                 </a>
             </div>
