@@ -60,9 +60,11 @@
                                 <span class="font-bold text-coffee-800 text-base">{{ $groupName }}</span>
                             </div>
                         </div>
-                        <div class="text-coffee-400 transition-transform duration-300 transform accordion-icon flex items-center gap-2">
+                        <div class="text-coffee-400 flex items-center gap-2">
                             <span class="text-xs text-coffee-400 font-normal">Klik untuk lihat detail</span>
-                            <x-facility-icon name="chevron-down" class="w-5 h-5" />
+                            <div class="transition-transform duration-300 transform accordion-icon">
+                                <x-facility-icon name="chevron-down" class="w-5 h-5" />
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-content hidden bg-white p-4 border-t border-coffee-100">
