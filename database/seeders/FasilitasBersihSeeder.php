@@ -95,53 +95,70 @@ class FasilitasBersihSeeder extends Seeder
 
     public function run(): void
     {
-        $this->command->info('🧹 Membersihkan fasilitas lama...');
+        if ($this->command) {
+            $this->command->info('🧹 Membersihkan fasilitas lama...');
+        }
 
-        // 1. Hapus semua relasi pivot
-        DB::table('cafe_fasilitas')->delete();
+        // 1. Hapus semua relasi pivot & fasilitas lama
+        try {
+            DB::table('cafe_fasilitas')->delete();
+        } catch (\Exception $e) {}
 
-        // 2. Hapus semua fasilitas lama
-        DB::table('fasilitas')->delete();
+        try {
+            DB::table('fasilitas')->delete();
+        } catch (\Exception $e) {}
 
-        $this->command->info('✅ Lama dihapus. Memasukkan 20 fasilitas inti...');
+        if ($this->command) {
+            $this->command->info('✅ Lama dihapus. Memasukkan 20 fasilitas inti...');
+        }
 
-        // 3. Insert fasilitas baru yang bersih
+        // 2. Insert fasilitas baru yang bersih
+        $now = now();
+        $fasilitasInserts = [];
         foreach ($this->fasilitasInti as $f) {
-            Fasilitas::create([
+            $fasilitasInserts[] = [
                 'name' => $f['name'],
                 'icon' => $f['icon'],
                 'slug' => Str::slug($f['name']),
-            ]);
+                'created_at' => $now,
+                'updated_at' => $now,
+            ];
         }
+        DB::table('fasilitas')->insert($fasilitasInserts);
 
         // Buat map nama => id
-        $fasilitasMap = Fasilitas::all()->keyBy('name');
+        $fasilitasMap = DB::table('fasilitas')->pluck('id', 'name')->toArray();
+        $cafeMap = DB::table('cafes')->pluck('id', 'name')->toArray();
 
-        $this->command->info('🔗 Memetakan ulang fasilitas ke 50 cafe...');
-
-        // 4. Pasang kembali relasi cafe <=> fasilitas
-        foreach ($this->cafeFasilitas as $cafeName => $daftarFasilitas) {
-            $cafe = Cafe::where('name', $cafeName)->first();
-            if (!$cafe) {
-                $this->command->warn("  ⚠️  Cafe tidak ditemukan: {$cafeName}");
-                continue;
-            }
-
-            $ids = [];
-            foreach ($daftarFasilitas as $fName) {
-                if (isset($fasilitasMap[$fName])) {
-                    $ids[] = $fasilitasMap[$fName]->id;
-                } else {
-                    $this->command->warn("  ⚠️  Fasilitas tidak ditemukan: {$fName}");
-                }
-            }
-
-            $cafe->fasilitas()->sync($ids);
-            $this->command->line("  ✓ {$cafeName} → " . count($ids) . " fasilitas");
+        if ($this->command) {
+            $this->command->info('🔗 Memetakan ulang fasilitas ke 50 cafe...');
         }
 
-        $this->command->info('');
-        $this->command->info('🎉 Selesai! Total fasilitas: ' . Fasilitas::count());
-        $this->command->info('🎉 Total relasi: ' . DB::table('cafe_fasilitas')->count());
+        // 3. Bulk insert pivot cafe <=> fasilitas
+        $pivotInserts = [];
+        foreach ($this->cafeFasilitas as $cafeName => $daftarFasilitas) {
+            if (!isset($cafeMap[$cafeName])) {
+                continue;
+            }
+            $cafeId = $cafeMap[$cafeName];
+
+            foreach ($daftarFasilitas as $fName) {
+                if (isset($fasilitasMap[$fName])) {
+                    $pivotInserts[] = [
+                        'cafe_id' => $cafeId,
+                        'fasilitas_id' => $fasilitasMap[$fName],
+                    ];
+                }
+            }
+        }
+
+        if (!empty($pivotInserts)) {
+            DB::table('cafe_fasilitas')->insert($pivotInserts);
+        }
+
+        if ($this->command) {
+            $this->command->info('🎉 Selesai! Total fasilitas: ' . DB::table('fasilitas')->count());
+            $this->command->info('🎉 Total relasi: ' . DB::table('cafe_fasilitas')->count());
+        }
     }
 }
