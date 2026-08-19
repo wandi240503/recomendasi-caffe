@@ -727,7 +727,7 @@ class CafeSeeder extends Seeder
             // Photos
             $photoInserts[] = [
                 'cafe_id' => $cafeId,
-                'url' => '/images/cafes/default-' . (($idx % 15) + 1) . '.jpg',
+                'url' => '/storage/cafes/' . $slug . '.jpg',
                 'caption' => $cafe['name'],
                 'is_primary' => true,
                 'created_at' => $now,
